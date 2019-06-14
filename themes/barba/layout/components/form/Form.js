@@ -6,6 +6,8 @@ export default class Form extends Component {
   load() {
     const dragEvents = ['dragenter', 'dragover', 'dragleave', 'drop'];
 
+    this.url = 'https://hooks.slack.com/services/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';
+
     this.file = [];
 
     dragEvents.forEach(e => {
