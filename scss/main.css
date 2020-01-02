@@ -1735,7 +1735,7 @@ body {
   transform: translate3d(0, -50%, 0); }
 
 [data-barba='container'] {
-  position: relative;
+  position: absolute;
   min-height: 100vh; }
   .is-transitioning [data-barba='container'] {
     position: absolute;

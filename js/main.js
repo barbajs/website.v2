@@ -32420,7 +32420,7 @@ module.exports = function anonymous(locals, filters, escape, rethrow) {
     };
     var __stack = {
         lineno: 1,
-        input: '<img class="partial-image" src="<%- src %>" alt="<%- alt %>">\n',
+        input: '<img class="partial-image" src="<%- theme.root %><%- src %>" alt="<%- alt %>">\n',
         filename: "."
     };
     function rethrow(err, str, filename, lineno) {
@@ -32437,7 +32437,7 @@ module.exports = function anonymous(locals, filters, escape, rethrow) {
         var buf = [];
         with (locals || {}) {
             (function() {
-                buf.push('<img class="partial-image" src="', (__stack.lineno = 1, src), '" alt="', (__stack.lineno = 1, alt), '">\n');
+                buf.push('<img class="partial-image" src="', (__stack.lineno = 1, theme.root), "", (__stack.lineno = 1, src), '" alt="', (__stack.lineno = 1, alt), '">\n');
             })();
         }
         return buf.join("");
