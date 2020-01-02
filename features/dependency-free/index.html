@@ -35,11 +35,10 @@
   <link rel="stylesheet" href="https://barbajs.github.io/website.v2/scss/main.css" type="text/css" media="all">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
-    window.barbaMenu = {
-      array: JSON.parse('[{"title":"Features","url":"/features/dependency-free","slug":"/features","subpages":[{"title":"Dependency Free","url":"/features/dependency-free","modifier":"dependency-free","prevpage":{"label":"About","slug":"/features/about/"},"nextpage":{"label":"Small size","slug":"/features/small-size/"}},{"title":"Small size","url":"/features/small-size","modifier":"small-size","prevpage":{"label":"Dependency Free","slug":"/features/dependency-free/"},"nextpage":{"label":"B/Core","slug":"/features/core/"}},{"title":"B/Core","url":"/features/core","modifier":"core","prevpage":{"label":"Small size","slug":"/features/small-size/"},"nextpage":{"label":"B/Router","slug":"/features/router/"}},{"title":"B/Router","url":"/features/router","modifier":"router","prevpage":{"label":"B/Core","slug":"/features/core/"},"nextpage":{"label":"B/Prefetch","slug":"/features/prefetch/"}},{"title":"B/Prefetch","url":"/features/prefetch","modifier":"prefetch","prevpage":{"label":"B/Router","slug":"/features/router/"},"nextpage":{"label":"About","slug":"/features/about/"}},{"title":"About","url":"/features/about","modifier":"about","prevpage":{"label":"B/Prefetch","slug":"/features/prefetch/"},"nextpage":{"label":"Dependency Free","slug":"/features/dependency-free/"}}]},{"title":"Example","url":"/example","slug":"/example"},{"title":"Showcase","url":"/showcase","slug":"/showcase"},{"title":"Docs","url":"/docs/getstarted/intro","slug":"/docs"}]'),
-    }
-    window.barbaDocs = {
-      array: JSON.parse('[{"title":"Get Started","url":"/docs/getstarted/intro","path":"/docs/getstarted","nextpage":{"label":"USER GUIDE","slug":"/docs/userguide/markup"}},{"title":"User Guide (Core)","url":"/docs/userguide/markup","path":"/docs/userguide","subpages":[{"title":"Markup","url":"/docs/userguide/markup","prevpage":{"label":"GET STARTED","slug":"/docs/getstarted/intro"},"nextpage":{"label":"Syntax","slug":"/docs/userguide/syntax"}},{"title":"Syntax","url":"/docs/userguide/syntax","prevpage":{"label":"Markup","slug":"/docs/userguide/markup"},"nextpage":{"label":"PLUGINS","slug":"/docs/plugins/css"}}]},{"title":"Plugins","url":"/docs/plugins/css","path":"/docs/plugins","subpages":[{"title":"Css","url":"/docs/plugins/css","prevpage":{"label":"USER GUIDE","slug":"/docs/userguide/markup"},"nextpage":{"label":"Router","slug":"/docs/plugins/router"}},{"title":"Router","url":"/docs/plugins/router","prevpage":{"label":"Css","slug":"/docs/plugins/css"},"nextpage":{"label":"Prefetch","slug":"/docs/plugins/prefetch"}},{"title":"Prefetch","url":"/docs/plugins/prefetch","prevpage":{"label":"Router","slug":"/docs/plugins/router"},"nextpage":{"label":"Preset","slug":"/docs/plugins/preset"}},{"title":"Preset","url":"/docs/plugins/preset","prevpage":{"label":"Prefetch","slug":"/docs/plugins/prefetch"},"nextpage":{"label":"Head","slug":"/docs/plugins/head"}},{"title":"Head","url":"/docs/plugins/head","prevpage":{"label":"Preset","slug":"/docs/plugins/preset"}}]}]'),
+    window.BARBA = {
+      root: '/website.v2/',
+      menu: JSON.parse('[{"title":"Features","url":"features/dependency-free","slug":"/features","subpages":[{"title":"Dependency Free","url":"features/dependency-free","modifier":"dependency-free","prevpage":{"label":"About","url":"features/about/"},"nextpage":{"label":"Small size","url":"features/small-size/"}},{"title":"Small size","url":"features/small-size","modifier":"small-size","prevpage":{"label":"Dependency Free","url":"features/dependency-free/"},"nextpage":{"label":"B/Core","url":"features/core/"}},{"title":"B/Core","url":"features/core","modifier":"core","prevpage":{"label":"Small size","url":"features/small-size/"},"nextpage":{"label":"B/Router","url":"features/router/"}},{"title":"B/Router","url":"features/router","modifier":"router","prevpage":{"label":"B/Core","url":"features/core/"},"nextpage":{"label":"B/Prefetch","url":"features/prefetch/"}},{"title":"B/Prefetch","url":"features/prefetch","modifier":"prefetch","prevpage":{"label":"B/Router","url":"features/router/"},"nextpage":{"label":"About","url":"features/about/"}},{"title":"About","url":"features/about","modifier":"about","prevpage":{"label":"B/Prefetch","url":"features/prefetch/"},"nextpage":{"label":"Dependency Free","url":"features/dependency-free/"}}]},{"title":"Example","url":"example","slug":"/example"},{"title":"Showcase","url":"showcase","slug":"/showcase"},{"title":"Docs","url":"docs/getstarted/intro","slug":"/docs"}]'),
+      docs: JSON.parse('[{"title":"Get Started","url":"docs/getstarted/intro","path":"/docs/getstarted","nextpage":{"label":"USER GUIDE","url":"docs/userguide/markup"}},{"title":"User Guide (Core)","url":"docs/userguide/markup","path":"/docs/userguide","subpages":[{"title":"Markup","url":"docs/userguide/markup","prevpage":{"label":"GET STARTED","url":"docs/getstarted/intro"},"nextpage":{"label":"Syntax","url":"docs/userguide/syntax"}},{"title":"Syntax","url":"docs/userguide/syntax","prevpage":{"label":"Markup","url":"docs/userguide/markup"},"nextpage":{"label":"PLUGINS","url":"docs/plugins/css"}}]},{"title":"Plugins","url":"/docs/plugins/css","path":"/docs/plugins","subpages":[{"title":"Css","url":"docs/plugins/css","prevpage":{"label":"USER GUIDE","url":"docs/userguide/markup"},"nextpage":{"label":"Router","url":"docs/plugins/router"}},{"title":"Router","url":"docs/plugins/router","prevpage":{"label":"Css","url":"docs/plugins/css"},"nextpage":{"label":"Prefetch","url":"docs/plugins/prefetch"}},{"title":"Prefetch","url":"docs/plugins/prefetch","prevpage":{"label":"Router","url":"docs/plugins/router"},"nextpage":{"label":"Preset","url":"docs/plugins/preset"}},{"title":"Preset","url":"docs/plugins/preset","prevpage":{"label":"Prefetch","url":"docs/plugins/prefetch"},"nextpage":{"label":"Head","url":"docs/plugins/head"}},{"title":"Head","url":"docs/plugins/head","prevpage":{"label":"Preset","url":"docs/plugins/preset"}}]}]'),
     }
 
     document.documentElement.classList.add('js');
@@ -96,7 +95,7 @@
         <!-- Page -->
         
         <li class="menu__pages__item">
-          <a class="menu__pages__item__link is-active" href="/features/dependency-free">
+          <a class="menu__pages__item__link is-active" href="/website.v2/features/dependency-free">
             Features
           </a>
 
@@ -108,7 +107,7 @@
               <!-- Subpage -->
               
               <li class="menu-subpages__item dependency-free is-active">
-                <a class="menu-subpages__item__link" href="/features/dependency-free">
+                <a class="menu-subpages__item__link" href="/website.v2/features/dependency-free">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
@@ -118,7 +117,7 @@
               </li>
               
               <li class="menu-subpages__item small-size ">
-                <a class="menu-subpages__item__link" href="/features/small-size">
+                <a class="menu-subpages__item__link" href="/website.v2/features/small-size">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
@@ -128,7 +127,7 @@
               </li>
               
               <li class="menu-subpages__item core ">
-                <a class="menu-subpages__item__link" href="/features/core">
+                <a class="menu-subpages__item__link" href="/website.v2/features/core">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
@@ -138,7 +137,7 @@
               </li>
               
               <li class="menu-subpages__item router ">
-                <a class="menu-subpages__item__link" href="/features/router">
+                <a class="menu-subpages__item__link" href="/website.v2/features/router">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
@@ -148,7 +147,7 @@
               </li>
               
               <li class="menu-subpages__item prefetch ">
-                <a class="menu-subpages__item__link" href="/features/prefetch">
+                <a class="menu-subpages__item__link" href="/website.v2/features/prefetch">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
@@ -158,7 +157,7 @@
               </li>
               
               <li class="menu-subpages__item about ">
-                <a class="menu-subpages__item__link" href="/features/about">
+                <a class="menu-subpages__item__link" href="/website.v2/features/about">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
@@ -177,7 +176,7 @@
         </li>
         
         <li class="menu__pages__item">
-          <a class="menu__pages__item__link " href="/example">
+          <a class="menu__pages__item__link " href="/website.v2/example">
             Example
           </a>
 
@@ -188,7 +187,7 @@
         </li>
         
         <li class="menu__pages__item">
-          <a class="menu__pages__item__link " href="/showcase">
+          <a class="menu__pages__item__link " href="/website.v2/showcase">
             Showcase
           </a>
 
@@ -199,7 +198,7 @@
         </li>
         
         <li class="menu__pages__item">
-          <a class="menu__pages__item__link " href="/docs/getstarted/intro">
+          <a class="menu__pages__item__link " href="/website.v2/docs/getstarted/intro">
             Docs
           </a>
 
@@ -217,7 +216,7 @@
 
     <!-- Menu Footer -->
     <div class="menu__footer">
-      <a class="menu__footer__download" href="/docs/getstarted/intro">
+      <a class="menu__footer__download" href="/website.v2//docs/getstarted/intro">
         Get started
       </a>
       <div class="menu__footer__extra menu-extra">
@@ -822,52 +821,47 @@
 
   
   
-  
-  
-
-  <!-- Left link -->
-  <li class="feature__nav__el">
-    <a href="/features/about/">
-      <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
+    
+      <!-- Left link -->
+      <li class="feature__nav__el">
+        <a href="/website.v2/features/about/">
+          <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
   <!-- <use attr.xlink:href="assets/svg/sprite.svg#barba-arrow-prev"></use> -->
   <use xlink:href="#barba-arrow-prev"></use>
 </svg>
-      <span>About</span>
-    </a>
-  </li>
-  <!-- Left link [end]-->
-
-  <!-- Right link -->
-  <li class="feature__nav__el">
-    <a href="/features/small-size/">
-      <span>Small size</span>
-      <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
+          <span>About</span>
+        </a>
+      </li>
+      <!-- Left link [end]-->
+      <!-- Right link -->
+      <li class="feature__nav__el">
+        <a href="/website.v2/features/small-size/">
+          <span>Small size</span>
+          <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
   <!-- <use attr.xlink:href="assets/svg/sprite.svg#barba-arrow-next"></use> -->
   <use xlink:href="#barba-arrow-next"></use>
 </svg>
-    </a>
-  </li>
-  <!-- Right link [end]-->
+        </a>
+      </li>
+      <!-- Right link [end]-->
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  
 
   
+
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   
 
 </ul>

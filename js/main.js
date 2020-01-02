@@ -19577,7 +19577,9 @@ function map(collection, iteratee) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap_TweenMax__ = __webpack_require__(7);
 
 
-const docs = window.barbaDocs.array;
+const {
+  docs
+} = window.BARBA;
 const docsUrlOrderedList = [];
 
 for (let i = 0; i < docs.length; i++) {
