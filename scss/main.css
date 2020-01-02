@@ -2343,13 +2343,11 @@ body {
   margin: 0 0 1rem; }
   .feature__box__column__icon[class*='big'],
   [class*='feature__box__column__icon--'][class*='big'] {
-    width: 15rem;
-    height: 11rem; }
-  .feature__box__column__icon[class*='png'],
-  [class*='feature__box__column__icon--'][class*='png'] {
-    width: 60%;
-    height: 60%;
-    margin: 0 auto; }
+    width: 18rem;
+    height: 13rem; }
+  .feature__box__column__icon .partial-image,
+  [class*='feature__box__column__icon--'] .partial-image {
+    object-fit: contain; }
 
 .feature__box__body__title {
   margin: 0;
