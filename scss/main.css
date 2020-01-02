@@ -555,8 +555,8 @@ a:active,
 a:visited {
   text-decoration: none; }
 
-html.transitioning,
-html.transitioning * {
+html.is-transitioning,
+html.is-transitioning * {
   pointer-events: none;
   cursor: progress; }
 
@@ -1737,6 +1737,9 @@ body {
 [data-barba='container'] {
   position: relative;
   min-height: 100vh; }
+  .is-transitioning [data-barba='container'] {
+    position: absolute;
+    width: 100%; }
 
 .intro {
   position: absolute;
