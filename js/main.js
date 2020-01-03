@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 140);
+/******/ 	return __webpack_require__(__webpack_require__.s = 141);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -12611,13 +12611,13 @@ const db = __WEBPACK_IMPORTED_MODULE_0_firebase_app___default.a.firestore();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__appear__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__appear__ = __webpack_require__(137);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__appear__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__raf__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__raf__ = __webpack_require__(138);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__raf__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__resize__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__resize__ = __webpack_require__(139);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__resize__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scroll__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__scroll__ = __webpack_require__(140);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__scroll__["a"]; });
 
 
@@ -12955,7 +12955,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
     const newLogoSVG = newLogo.querySelector('svg');
     const oldLogo = current.container.querySelector('.logo.featured');
     const title = next.container.querySelectorAll('h1 span');
-    const buttons = next.container.querySelectorAll('.intro__buttons a');
+    const buttons = next.container.querySelectorAll('.homepage__buttons a');
     const oldLogoRect = oldLogo.getBoundingClientRect();
     const newLogoRect = newLogo.getBoundingClientRect();
     const scale = oldLogoRect.width / newLogoRect.width;
@@ -12999,12 +12999,10 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__featuresOrder__ = __webpack_require__(141);
 
  // DEV
 // import { qs, qsa } from '../../../source/js/utils/dom'
 // import deferred from '../../../source/js/utils/deferred'
-
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   sync: true,
@@ -13020,16 +13018,13 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
       current,
       next
     } = _ref;
-    const intro = current.container.querySelector('.intro');
-    const oldLogo = current.container.querySelector('.logo.home-logo');
+    const intro = current.container.querySelector('.homepage');
+    const oldLogo = current.container.querySelector('.logo.homepage__logo');
     const newLogo = next.container.querySelector('.logo.featured');
     const title = current.container.querySelectorAll('h1 span');
-    const buttons = current.container.querySelectorAll('.intro__buttons a');
-    const list = current.container.querySelector('.intro__list');
-    const {
-      featureSlug
-    } = next.container.querySelector('.feature').dataset;
-    const hoverIndex = __WEBPACK_IMPORTED_MODULE_2__featuresOrder__["a" /* default */].indexOf(featureSlug);
+    const buttons = current.container.querySelectorAll('.homepage__buttons a');
+    const list = current.container.querySelector('.homepage__list');
+    const hoverIndex = next.container.querySelector('.feature').dataset.featureOrder;
     const bigShape = current.container.querySelectorAll('.logo.only-big .hover .item')[hoverIndex];
     const oldBigShape = current.container.querySelector('.logo.only-big');
     const newBigShape = next.container.querySelector('.logo.only-big');
@@ -13267,13 +13262,48 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(2);
+
 /* harmony default export */ __webpack_exports__["a"] = ({
   to: {
     namespace: 'home'
   },
 
   once() {
-    console.log('once home');
+    const logo = document.querySelector('.logo.homepage__logo');
+    const title = document.querySelectorAll('h1 span');
+    const buttons = document.querySelectorAll('.homepage__buttons a');
+    const chrome = [document.querySelector('.header__infos'), document.querySelector('.header__external-links'), document.querySelector('.site-footer')];
+    document.documentElement.classList.add('is-transitioning');
+    const tl = __WEBPACK_IMPORTED_MODULE_0_gsap__["a" /* gsap */].timeline({
+      delay: 0.5,
+      onComplete: () => {
+        document.documentElement.classList.remove('is-transitioning');
+      }
+    });
+    tl.from(logo, {
+      duration: 0.5,
+      y: 100,
+      scale: 1.1,
+      ease: 'power4.inOut'
+    }, 0).from(title, {
+      duration: 1,
+      yPercent: 100,
+      scale: 1,
+      ease: 'power4',
+      stagger: 0.05
+    }, 0.6).from(buttons, {
+      duration: 1,
+      y: 40,
+      opacity: 0,
+      ease: 'power4',
+      stagger: 0.05
+    }, 1.2).from(chrome, {
+      duration: 0.3,
+      scale: 0,
+      ease: 'power4',
+      stagger: 0.2
+    }, 1.5);
   }
 
 });
@@ -13308,12 +13338,13 @@ var map = {
 	"./docs/DocsNav.js": 127,
 	"./docs/DocsNavLateral.js": 128,
 	"./features/Feature.js": 129,
-	"./homepage/Intro.js": 130,
-	"./showcase/Form.js": 131,
-	"./showcase/Modal.js": 132,
-	"./showcase/ShowcaseCta.js": 133,
-	"./showcase/ShowcaseGrid.js": 134,
-	"./showcase/Spinner.js": 135
+	"./homepage/Homepage-old.js": 130,
+	"./homepage/Homepage.js": 131,
+	"./showcase/Form.js": 132,
+	"./showcase/Modal.js": 133,
+	"./showcase/ShowcaseCta.js": 134,
+	"./showcase/ShowcaseGrid.js": 135,
+	"./showcase/Spinner.js": 136
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -30873,135 +30904,9 @@ const bodymovins = [{
 
 /***/ }),
 /* 130 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__barba_core__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__barba_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__barba_core__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_kapla__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_kapla___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_kapla__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_gsap__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__ = __webpack_require__(142);
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = (class extends __WEBPACK_IMPORTED_MODULE_1_kapla__["Component"] {
-  load() {
-    this.$logoContainer = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["a" /* qs */])('.logo-container', this.$el);
-    this.$logoHover = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["a" /* qs */])('.logo.only-big', this.$el);
-    this.$logo = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["a" /* qs */])('.home-logo.logo svg', this.$el);
-    this.$links = [...__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["b" /* qsa */])('.home-logo.logo .links a', this.$el)];
-    this.$texts = [...__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["b" /* qsa */])('.intro__list li', this.$el)];
-    this.$items = [...__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["b" /* qsa */])('.only-big .hover .item', this.$el)];
-    this.$list = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["a" /* qs */])('.intro__list', this.$el);
-    this.mouseEnter = this.mouseEnter.bind(this);
-    this.mouseLeave = this.mouseLeave.bind(this);
-    this.$links.forEach((link, index) => {
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["c" /* $on */])(link, 'mouseenter', () => this.mouseEnter(index));
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["c" /* $on */])(link, 'mouseleave', () => this.mouseLeave(index));
-    }); // Play onboarding if it's the first page
-
-    if (!__WEBPACK_IMPORTED_MODULE_0__barba_core___default.a.history.previous) {
-      this.boarding();
-    } // DEV
-    // this.onResize();
-
-  }
-
-  boarding() {
-    const logo = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["a" /* qs */])('.logo.home-logo', this.$el);
-    const title = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["b" /* qsa */])('h1 span', this.$el);
-    const buttons = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["b" /* qsa */])('.intro__buttons a', this.$el);
-    const chrome = [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["a" /* qs */])('.header__infos'), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["a" /* qs */])('.header__external-links'), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["a" /* qs */])('.site-footer')];
-    document.documentElement.classList.add('transitioning');
-    const tl = __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].timeline({
-      delay: 0.5,
-      onComplete: () => {
-        document.documentElement.classList.remove('transitioning');
-      }
-    });
-    tl.from(logo, {
-      duration: 0.5,
-      y: 100,
-      scale: 1.1,
-      ease: 'power4.inOut'
-    }, 0).from(title, {
-      duration: 1,
-      yPercent: 100,
-      scale: 1,
-      ease: 'power4',
-      stagger: 0.05
-    }, 0.6).from(buttons, {
-      duration: 1,
-      y: 40,
-      opacity: 0,
-      ease: 'power4',
-      stagger: 0.05
-    }, 1.2).from(chrome, {
-      duration: 0.3,
-      scale: 0,
-      ease: 'power4',
-      stagger: 0.2
-    }, 1.5);
-  }
-
-  destroy() {
-    this.$links.forEach((link, index) => {
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["d" /* $off */])(link, 'mouseenter', () => this.mouseEnter(index));
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["d" /* $off */])(link, 'mouseleave', () => this.mouseLeave(index));
-    });
-  }
-
-  mouseEnter(index) {
-    this.$logo.classList.add('gray');
-    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$texts[index]);
-    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$items[index]);
-    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$items[index], {
-      duration: 0.4,
-      opacity: 1
-    });
-    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$texts[index], {
-      duration: 0.2,
-      opacity: 1,
-      scale: 1
-    });
-    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$list, {
-      duration: 0.4,
-      yPercent: -(index * 100),
-      ease: 'power4'
-    });
-  }
-
-  mouseLeave(index) {
-    if (__WEBPACK_IMPORTED_MODULE_0__barba_core___default.a.transitions.isRunning) {
-      return;
-    }
-
-    this.$logo.classList.remove('gray');
-    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$texts[index]);
-    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$items[index]);
-    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$items[index], {
-      duration: 0.4,
-      opacity: 0
-    });
-    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$texts[index], {
-      duration: 0.2,
-      opacity: 0,
-      scale: 0.9
-    });
-  } // DEV
-  // onResize() {
-  //   const bounds = this.$logo.getBoundingClientRect();
-  //   this.$logoHover.style.top = `${bounds.top}px`;
-  //   this.$logoHover.style.left = `${bounds.left}px`;
-  //   this.$logoHover.style.right = `${bounds.right}px`;
-  //   this.$logoHover.style.bottom = `${bounds.bottom}px`;
-  // }
-
-
-}); // BU
+// BU
 // import {
 //   Component
 // } from 'kapla';
@@ -31187,7 +31092,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //     function hover() {
 //       const $a = document.querySelectorAll('.hover a');
 //       const $base = document.querySelector('.base');
-//       const $names = [...document.querySelectorAll('.intro__list li')];
+//       const $names = [...document.querySelectorAll('.homepage__list li')];
 //       [...$a].forEach((link, index) => {
 //         link.addEventListener('mouseenter', () => onMouseEnter(link, index));
 //         link.addEventListener('mouseleave', () => onMouseLeave(link, index));
@@ -31264,6 +31169,92 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 131 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__barba_core__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__barba_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__barba_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_kapla__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_kapla___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_kapla__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_gsap__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__ = __webpack_require__(142);
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (class extends __WEBPACK_IMPORTED_MODULE_1_kapla__["Component"] {
+  load() {
+    this.$logoHover = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["a" /* qs */])('.logo.only-big', this.$el);
+    this.$logo = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["a" /* qs */])('.homepage__logo.logo svg', this.$el);
+    this.$links = [...__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["b" /* qsa */])('.homepage__logo.logo .links a', this.$el)];
+    this.$items = [...__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["b" /* qsa */])('.only-big .hover .item', this.$el)];
+    this.mouseEnter = this.mouseEnter.bind(this);
+    this.mouseLeave = this.mouseLeave.bind(this);
+    this.$links.forEach((link, index) => {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["c" /* $on */])(link, 'mouseenter', () => this.mouseEnter(index));
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["c" /* $on */])(link, 'mouseleave', () => this.mouseLeave(index));
+    });
+  }
+
+  destroy() {
+    this.$links.forEach((link, index) => {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["d" /* $off */])(link, 'mouseenter', () => this.mouseEnter(index));
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__["d" /* $off */])(link, 'mouseleave', () => this.mouseLeave(index));
+    });
+  }
+
+  mouseEnter(index) {
+    this.$logo.classList.add('gray');
+    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$refs.listItem[index]);
+    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$items[index]);
+    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$items[index], {
+      duration: 0.4,
+      opacity: 1
+    });
+    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$refs.listItem[index], {
+      duration: 0.2,
+      opacity: 1,
+      scale: 1
+    });
+    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$refs.list, {
+      duration: 0.4,
+      yPercent: -(index * 100),
+      ease: 'power4'
+    });
+  }
+
+  mouseLeave(index) {
+    if (__WEBPACK_IMPORTED_MODULE_0__barba_core___default.a.transitions.isRunning) {
+      return;
+    }
+
+    this.$logo.classList.remove('gray');
+    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$refs.listItem[index]);
+    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$items[index]);
+    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$items[index], {
+      duration: 0.4,
+      opacity: 0
+    });
+    __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$refs.listItem[index], {
+      duration: 0.2,
+      opacity: 0,
+      scale: 0.9
+    });
+  } // DEV
+  // onResize() {
+  //   const bounds = this.$logo.getBoundingClientRect();
+  //   this.$logoHover.style.top = `${bounds.top}px`;
+  //   this.$logoHover.style.left = `${bounds.left}px`;
+  //   this.$logoHover.style.right = `${bounds.right}px`;
+  //   this.$logoHover.style.bottom = `${bounds.bottom}px`;
+  // }
+
+
+});
+
+/***/ }),
+/* 132 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31479,7 +31470,7 @@ class Form extends __WEBPACK_IMPORTED_MODULE_0_kapla__["Component"] {
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31523,7 +31514,7 @@ class Modal extends __WEBPACK_IMPORTED_MODULE_0_kapla__["Component"] {
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31546,7 +31537,7 @@ class ShowcaseCta extends __WEBPACK_IMPORTED_MODULE_0_kapla__["Component"] {
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31571,7 +31562,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31641,7 +31632,7 @@ class LoaderSpinner extends __WEBPACK_IMPORTED_MODULE_0_kapla__["Component"] {
 
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31807,7 +31798,7 @@ const appear = new MyEvent('appear');
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31871,7 +31862,7 @@ const raf = new MyEvent('raf');
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31933,7 +31924,7 @@ const resize = new MyEvent('resize');
 
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31987,7 +31978,7 @@ const scroll = new MyEvent('scroll');
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32100,13 +32091,6 @@ class Main {
 }
 
 Main.start();
-
-/***/ }),
-/* 141 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = (['dependency-free', 'small-size', 'core', 'router', 'prefetch', 'about']);
 
 /***/ }),
 /* 142 */

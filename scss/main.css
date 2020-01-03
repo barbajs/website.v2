@@ -1735,13 +1735,13 @@ body {
   transform: translate3d(0, -50%, 0); }
 
 [data-barba='container'] {
-  position: absolute;
+  position: relative;
   min-height: 100vh; }
   .is-transitioning [data-barba='container'] {
     position: absolute;
     width: 100%; }
 
-.intro {
+.homepage {
   position: absolute;
   top: 0;
   right: 0;
@@ -1755,37 +1755,34 @@ body {
   align-items: center;
   padding: 4rem;
   text-align: center; }
+  .homepage .logo {
+    max-width: 57rem;
+    margin: 0 auto; }
 
-.intro .logo {
-  max-width: 57rem; }
-
-.intro .logo-container {
+.homepage__logo-outer {
   position: relative;
   width: 100%; }
-  .intro .logo-container .logo {
-    margin: 0 auto; }
-  .intro .logo-container .home-logo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; }
 
-.intro .logo.only-big {
+.homepage__logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+  .to-feature .homepage__logo {
+    z-index: -1; }
+
+.homepage .logo.only-big {
   position: relative;
   z-index: 2;
   pointer-events: none; }
-  .intro .logo.only-big .base,
-  .intro .logo.only-big .links {
+  .homepage .logo.only-big .base,
+  .homepage .logo.only-big .links {
     display: none; }
+  .to-feature .homepage .logo.only-big {
+    position: static; }
 
-.intro.to-feature .logo-container .home-logo {
-  z-index: -1; }
-
-.intro.to-feature .logo.only-big {
-  position: static; }
-
-.intro h1 {
+.homepage__title {
   max-width: 65rem;
   margin: 0;
   margin-bottom: 2rem;
@@ -1794,42 +1791,64 @@ body {
   font-weight: 400;
   line-height: 1.2; }
   @media only screen and (min-width: 37.5em) {
-    .intro h1 {
+    .homepage__title {
       width: 80%;
       font-size: 2.5rem; } }
-  .intro h1 .line {
+  .homepage__title .line {
     overflow: hidden; }
-  .intro h1 span {
+  .homepage__title span {
     display: inline-block; }
 
-.intro__list {
+.homepage__list {
   position: relative;
   z-index: -1;
   width: 100%;
   margin: 3rem 0;
   padding: 0; }
-  .intro__list div {
+  .homepage__list div {
     position: absolute;
     top: 100%;
     right: 0;
     left: 0; }
-  .intro__list li {
-    display: block;
-    width: 100%;
-    font-family: "Space Mono", monospace;
-    font-size: 2.2rem;
-    font-weight: 400;
-    text-align: center;
-    opacity: 0;
-    transform: scale(0.9); }
-    @media only screen and (min-width: 37.5em) {
-      .intro__list li {
-        font-size: 3rem; } }
-    @media only screen and (min-width: 48em) {
-      .intro__list li {
-        font-size: 4rem; } }
-  .intro__list li:first-child {
+  .homepage__list li:first-child {
     position: relative; }
+
+.homepage__list__item,
+[class*='homepage__list__item--'] {
+  display: block;
+  width: 100%;
+  font-family: "Space Mono", monospace;
+  font-size: 2.2rem;
+  font-weight: 400;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.9); }
+  @media only screen and (min-width: 37.5em) {
+    .homepage__list__item,
+    [class*='homepage__list__item--'] {
+      font-size: 3rem; } }
+  @media only screen and (min-width: 48em) {
+    .homepage__list__item,
+    [class*='homepage__list__item--'] {
+      font-size: 4rem; } }
+  .homepage__list__item[class*='--dependency-free'],
+  [class*='homepage__list__item--'][class*='--dependency-free'] {
+    color: #38d1f1; }
+  .homepage__list__item[class*='--small-size'],
+  [class*='homepage__list__item--'][class*='--small-size'] {
+    color: #04bf0c; }
+  .homepage__list__item[class*='--core'],
+  [class*='homepage__list__item--'][class*='--core'] {
+    color: #ffa543; }
+  .homepage__list__item[class*='--router'],
+  [class*='homepage__list__item--'][class*='--router'] {
+    color: #ec4343; }
+  .homepage__list__item[class*='--prefetch'],
+  [class*='homepage__list__item--'][class*='--prefetch'] {
+    color: #8c44d9; }
+  .homepage__list__item[class*='--about'],
+  [class*='homepage__list__item--'][class*='--about'] {
+    color: #2e5bdc; }
 
 .form {
   display: none; }
@@ -2516,13 +2535,13 @@ main {
     display: block;
     padding: 0; }
 
-.intro__buttons {
+.homepage__buttons {
   display: flex;
   flex-direction: column; }
   @media only screen and (min-width: 48em) {
-    .intro__buttons {
+    .homepage__buttons {
       flex-direction: row; }
-      .intro__buttons .button + .button {
+      .homepage__buttons .button + .button {
         margin-left: 2rem; } }
-  .intro__buttons .button {
+  .homepage__buttons .button {
     margin-top: 1rem; }
