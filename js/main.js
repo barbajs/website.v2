@@ -13246,6 +13246,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
     const featureContainer = container.querySelector('.feature-outer');
     const featureBox = container.querySelector('.feature__box');
     const featureInstance = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__app__["b" /* getInstance */])(container, 'feature');
+    console.log(__WEBPACK_IMPORTED_MODULE_0__app__["b" /* getInstance */]);
     const tl = __WEBPACK_IMPORTED_MODULE_1_gsap__["a" /* gsap */].timeline();
     featureBox && tl.from(featureBox, {
       duration: 1.5,
@@ -13357,7 +13358,7 @@ var map = {
 	"./chrome/MenuTrigger.js": 126,
 	"./docs/DocsNav.js": 127,
 	"./docs/DocsNavLateral.js": 128,
-	"./features/Feature.js": 129,
+	"./feature/Feature.js": 129,
 	"./homepage/Homepage-old.js": 130,
 	"./homepage/Homepage.js": 131,
 	"./showcase/Form.js": 132,
@@ -30878,6 +30879,7 @@ const bodymovins = [{
 }];
 /* harmony default export */ __webpack_exports__["default"] = (class extends __WEBPACK_IMPORTED_MODULE_0_kapla__["Component"] {
   load() {
+    console.log('test');
     const featureOrder = this.data.get('order');
     this.bodymovin = bodymovins[featureOrder];
 
