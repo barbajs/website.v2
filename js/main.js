@@ -12773,8 +12773,8 @@ for (let i = 0; i < docs.length; i++) {
 /**
  * Check if forward or backward direction
  *
- * @param {int} currentFeatureOrder page namepspace
- * @param {int} nextFeatureOrder page namepspace
+ * @param {int} currentFeatureOrder Current page order
+ * @param {int} nextFeatureOrder Next page order
  * @returns {boolean} If forward
  */
 
@@ -12837,10 +12837,10 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
     const nextFeatureOrder = $nextFeature.dataset.featureOrder;
     const currentFeatureOrder = $currentFeature.dataset.featureOrder;
     const goingForward = isForward(currentFeatureOrder, nextFeatureOrder);
-    const $nextContainer = $nextFeature.querySelector('.feature__container');
+    const $nextContainer = $nextFeature.querySelector('.feature-outer');
     const $nextBox = $nextFeature.querySelector('.feature__box');
     const $nextInstance = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__app__["b" /* getInstance */])(next.container, 'feature');
-    const $currentContainer = $currentFeature.querySelector('.feature__container');
+    const $currentContainer = $currentFeature.querySelector('.feature-outer');
     const $currentBox = $currentFeature.querySelector('.feature__box');
     const $currentLogo = $currentFeature.querySelector('.logo');
     const $currentLogoShapes = $currentFeature.querySelector('.logo.only-big');
@@ -12888,7 +12888,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
       duration: 1.5,
       x: goingForward ? window.innerWidth * 0.5 : -window.innerWidth * 0.5,
       ease: 'power4'
-    }, 1);
+    }, 0.5);
     return tl.then();
   }
 
@@ -12917,7 +12917,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
     const {
       container
     } = current;
-    const feature = container.querySelector('.feature__container');
+    const feature = container.querySelector('.feature-outer');
     const navigation = container.querySelectorAll('.feature__nav__el');
     const oldLogo = container.querySelectorAll('.logo.featured .base, .logo.featured .hover');
     const fullOldLogo = container.querySelectorAll('.logo.featured');
@@ -13046,7 +13046,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
     }).to(oldLogo, {
       duration: 1.4,
       scale,
-      y: -(oldLogoRect.top - newLogoRect.top + newLogoRect.height * scale * 2 - 6),
+      y: -(oldLogoRect.top - newLogoRect.top + newLogoRect.height * (scale * 2) - 6),
       ease: 'power4.inOut'
     }, 0).to(bigShape, {
       duration: 0.1,
@@ -13070,7 +13070,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
     }, 0).to(title, {
       duration: 1,
       yPercent: 100,
-      ease: 'power4.inOut',
+      ease: 'power4.in',
       stagger: 0.05
     }, 0).to(buttons, {
       duration: 1,
@@ -13089,17 +13089,26 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
       container
     } = next;
     const newLogo = container.querySelector('.logo.featured');
-    const featureContainer = container.querySelector('.feature__container');
+    const featureContainer = container.querySelector('.feature-outer');
+    const featureBox = container.querySelector('.feature__box');
     const navigation = container.querySelectorAll('.feature__nav__el');
-    return __WEBPACK_IMPORTED_MODULE_0_gsap__["a" /* gsap */].timeline({
+    const tl = __WEBPACK_IMPORTED_MODULE_0_gsap__["a" /* gsap */].timeline({
       delay: 1.3,
       onComplete: () => {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__app__["b" /* getInstance */])(next.container, 'feature').animateIn();
       }
-    }).from(newLogo, {
+    });
+    tl.from(newLogo, {
       duration: 1,
       opacity: 0
-    }, 0).from(featureContainer, {
+    }, 0);
+    featureBox && tl.from(featureBox, {
+      duration: 1.5,
+      y: 100,
+      opacity: 0,
+      ease: 'power4'
+    }, 0);
+    tl.from(featureContainer, {
       duration: 1,
       opacity: 0,
       y: 200,
@@ -13111,7 +13120,8 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
       y: 30,
       ease: 'power4',
       stagger: 0.2
-    }, 0.8).then();
+    }, 0.8);
+    return tl.then();
   }
 
 });
@@ -13233,7 +13243,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
       container
     } = next;
     const nextFeatureSlug = container.querySelector('.feature').dataset.featureSlug;
-    const featureContainer = container.querySelector('.feature__container');
+    const featureContainer = container.querySelector('.feature-outer');
     const featureBox = container.querySelector('.feature__box');
     const featureInstance = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__app__["b" /* getInstance */])(container, 'feature');
     const tl = __WEBPACK_IMPORTED_MODULE_1_gsap__["a" /* gsap */].timeline();
@@ -13271,7 +13281,8 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
 
   once() {
     const logo = document.querySelector('.logo.homepage__logo');
-    const title = document.querySelectorAll('h1 span');
+    const logoItems = document.querySelectorAll('.only-big .hover .item', this.$el);
+    const title = document.querySelectorAll('.homepage__title span');
     const buttons = document.querySelectorAll('.homepage__buttons a');
     const chrome = [document.querySelector('.header__infos'), document.querySelector('.header__external-links'), document.querySelector('.site-footer')];
     document.documentElement.classList.add('is-transitioning');
@@ -13284,9 +13295,18 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
     tl.from(logo, {
       duration: 0.5,
       y: 100,
-      scale: 1.1,
-      ease: 'power4.inOut'
-    }, 0).from(title, {
+      scale: 1.2,
+      ease: 'power4'
+    }, 0).to(logoItems, {
+      duration: 0.3,
+      opacity: 1,
+      ease: 'power4'
+    }, 0.5).to(logoItems, {
+      duration: 0.5,
+      opacity: 0,
+      ease: 'power4',
+      stagger: 0.05
+    }, 1).from(title, {
       duration: 1,
       yPercent: 100,
       scale: 1,

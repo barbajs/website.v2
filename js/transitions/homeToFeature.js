@@ -1,8 +1,8 @@
 import {
-  gsap
+  gsap,
 } from 'gsap'
 import {
-  getInstance
+  getInstance,
 } from '../app'
 // DEV
 // import { qs, qsa } from '../../../source/js/utils/dom'
@@ -19,7 +19,7 @@ export default {
 
   leave({
     current,
-    next
+    next,
   }) {
     const intro = current.container.querySelector('.homepage')
     const oldLogo = current.container.querySelector('.logo.homepage__logo')
@@ -62,7 +62,7 @@ export default {
           y: -(
             oldLogoRect.top -
             newLogoRect.top +
-            newLogoRect.height * scale * 2 -
+            (newLogoRect.height * (scale * 2)) -
             6
           ),
           ease: 'power4.inOut',
@@ -113,7 +113,7 @@ export default {
         title, {
           duration: 1,
           yPercent: 100,
-          ease: 'power4.inOut',
+          ease: 'power4.in',
           stagger: 0.05,
         },
         0
@@ -131,29 +131,42 @@ export default {
       .then()
   },
   enter({
-    next
+    next,
   }) {
     const {
-      container
+      container,
     } = next
     const newLogo = container.querySelector('.logo.featured')
-    const featureContainer = container.querySelector('.feature__container')
+    const featureContainer = container.querySelector('.feature-outer')
+    const featureBox = container.querySelector('.feature__box')
     const navigation = container.querySelectorAll('.feature__nav__el')
 
-    return gsap
+    const tl = gsap
       .timeline({
         delay: 1.3,
         onComplete: () => {
           getInstance(next.container, 'feature').animateIn()
         },
       })
-      .from(
-        newLogo, {
-          duration: 1,
+
+    tl.from(
+      newLogo, {
+        duration: 1,
+        opacity: 0,
+      },
+      0
+    );
+    featureBox &&
+      tl.from(
+        featureBox, {
+          duration: 1.5,
+          y: 100,
           opacity: 0,
+          ease: 'power4',
         },
         0
-      )
+      );
+    tl
       .from(
         featureContainer, {
           duration: 1,
@@ -173,8 +186,9 @@ export default {
           stagger: 0.2,
         },
         0.8
-      )
-      .then()
+      );
+
+    return tl.then()
   },
 }
 

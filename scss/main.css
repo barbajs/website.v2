@@ -1810,8 +1810,6 @@ body {
     top: 100%;
     right: 0;
     left: 0; }
-  .homepage__list li:first-child {
-    position: relative; }
 
 .homepage__list__item,
 [class*='homepage__list__item--'] {
@@ -1849,6 +1847,9 @@ body {
   .homepage__list__item[class*='--about'],
   [class*='homepage__list__item--'][class*='--about'] {
     color: #2e5bdc; }
+  .homepage__list__item:first-child,
+  [class*='homepage__list__item--']:first-child {
+    position: relative; }
 
 .form {
   display: none; }
@@ -2241,21 +2242,21 @@ body {
   .feature[data-feature-slug='about'] {
     overflow: auto; }
 
-.big-shape-container {
+.big-shape-outer {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   right: 0;
   left: 0;
-  transform: translateY(-50%);
   opacity: 0.8; }
-  .big-shape-container svg {
+  .big-shape-outer svg {
     display: block;
     max-width: 56.8rem;
     margin: 0 auto; }
-    .big-shape-container svg .base,
-    .big-shape-container svg .links {
+    .big-shape-outer svg .base,
+    .big-shape-outer svg .links {
       display: none; }
-  .big-shape-container * {
+  .big-shape-outer * {
     pointer-events: none; }
 
 [data-feature-slug='dependency-free'] .colored {
@@ -2276,21 +2277,21 @@ body {
 [data-feature-slug='about'] .colored {
   color: #2e5bdc; }
 
-.feature__container {
+.feature-outer {
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 700px;
+  max-width: 70rem;
   height: 100%;
   margin: 0 auto; }
   @media only screen and (min-width: 37.5em) {
-    .feature__container {
+    .feature-outer {
       padding-top: 10rem; } }
-  .feature__container p {
+  .feature-outer p {
     font-size: 1.4rem;
     line-height: 1.8rem; }
     @media only screen and (min-width: 48em) {
-      .feature__container p {
+      .feature-outer p {
         font-size: 1.6rem;
         line-height: 2.2rem; } }
 
@@ -2326,7 +2327,7 @@ body {
   max-width: 85vw;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  box-shadow: 0 14px 30px rgba(160, 160, 160, 0.3); }
+  box-shadow: 0 1.4rem 3rem rgba(160, 160, 160, 0.3); }
   @media only screen and (min-width: 64em) {
     .feature__box {
       top: initial;
