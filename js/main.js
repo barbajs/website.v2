@@ -32092,7 +32092,10 @@ class Main {
       __WEBPACK_IMPORTED_MODULE_0__barba_core___default.a.hooks.after(() => {
         document.documentElement.classList.remove('is-transitioning');
       });
-      window.BARBA_DEBUG = __WEBPACK_IMPORTED_MODULE_0__barba_core___default.a; // Kapla
+      window.BARBA_DEBUG = {
+        barba: __WEBPACK_IMPORTED_MODULE_0__barba_core___default.a,
+        router: __WEBPACK_IMPORTED_MODULE_1__barba_router___default.a
+      }; // Kapla
 
       const context = __webpack_require__(45); // 1. Register events
 
