@@ -61,7 +61,7 @@ export default class extends Component {
       )
       setTimeout(() => {
         resolve()
-      }, 1500)
+      }, 1000)
       // this.animation.onComplete = () => {
       //   resolve();
       // };
