@@ -1,18 +1,18 @@
 export default [
   {
-    path: '/features/:type',
+    path: '(/website.v2/|/)features/:type',
     name: 'feature',
   },
   {
-    path: '/docs/:section/:subsection',
+    path: '(/website.v2/|/)/docs/:section/:subsection',
     name: 'doc',
   },
   {
-    path: '/:page',
+    path: '(/website.v2/|/):page',
     name: 'page',
   },
   {
-    path: '/',
+    path: '(/website.v2/|/)',
     name: 'home',
   },
-];
+]

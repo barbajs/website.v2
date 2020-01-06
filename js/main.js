@@ -13335,16 +13335,16 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ([{
-  path: '/features/:type',
+  path: '(/website.v2/|/)features/:type',
   name: 'feature'
 }, {
-  path: '/docs/:section/:subsection',
+  path: '(/website.v2/|/)/docs/:section/:subsection',
   name: 'doc'
 }, {
-  path: '/:page',
+  path: '(/website.v2/|/):page',
   name: 'page'
 }, {
-  path: '/',
+  path: '(/website.v2/|/)',
   name: 'home'
 }]);
 
@@ -32091,7 +32091,8 @@ class Main {
       });
       __WEBPACK_IMPORTED_MODULE_0__barba_core___default.a.hooks.after(() => {
         document.documentElement.classList.remove('is-transitioning');
-      }); // Kapla
+      });
+      window.BARBA_DEBUG = __WEBPACK_IMPORTED_MODULE_0__barba_core___default.a; // Kapla
 
       const context = __webpack_require__(45); // 1. Register events
 
