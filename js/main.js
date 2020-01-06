@@ -13334,19 +13334,25 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ([{
-  path: '/website.v2/features/:type',
+const {
+  hostname
+} = window.location;
+const root = hostname === 'barbajs.github.io' ? '/website.v2/' : '/';
+const getRoutes = () => [{
+  path: "".concat(root, "features/:type"),
   name: 'feature'
 }, {
-  path: '/website.v2//docs/:section/:subsection',
+  path: "".concat(root, "docs/:section/:subsection"),
   name: 'doc'
 }, {
-  path: '/website.v2/:page',
+  path: "".concat(root, ":page"),
   name: 'page'
 }, {
-  path: '/website.v2/',
+  path: "".concat(root),
   name: 'home'
-}]);
+}];
+/* harmony export (immutable) */ __webpack_exports__["a"] = getRoutes;
+
 
 /***/ }),
 /* 45 */
@@ -32024,6 +32030,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+ // DEV
+// import routes from './transitions/routes'
 
 
 
@@ -32072,9 +32080,8 @@ class Main {
     // polyfills.init();
     // Avoid 'blank page' on JS error
     try {
-      // DEV
       __WEBPACK_IMPORTED_MODULE_0__barba_core___default.a.use(__WEBPACK_IMPORTED_MODULE_1__barba_router___default.a, {
-        routes: __WEBPACK_IMPORTED_MODULE_4__transitions_routes__["a" /* default */]
+        routes: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__transitions_routes__["a" /* getRoutes */])()
       });
       __WEBPACK_IMPORTED_MODULE_0__barba_core___default.a.init({
         debug: true,
@@ -32091,11 +32098,12 @@ class Main {
       });
       __WEBPACK_IMPORTED_MODULE_0__barba_core___default.a.hooks.after(() => {
         document.documentElement.classList.remove('is-transitioning');
-      });
-      window.BARBA_DEBUG = {
-        barba: __WEBPACK_IMPORTED_MODULE_0__barba_core___default.a,
-        router: __WEBPACK_IMPORTED_MODULE_1__barba_router___default.a
-      }; // Kapla
+      }); // DEV
+      // window.BARBA_DEBUG = {
+      //   barba,
+      //   router,
+      // }
+      // Kapla
 
       const context = __webpack_require__(45); // 1. Register events
 
