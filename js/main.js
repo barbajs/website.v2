@@ -13343,7 +13343,7 @@ const getRoutes = () => [{
   name: 'feature'
 }, {
   path: "".concat(root, "docs/:section/:subsection"),
-  name: 'doc'
+  name: 'docs'
 }, {
   path: "".concat(root, ":page"),
   name: 'page'
