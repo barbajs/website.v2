@@ -13335,16 +13335,16 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ([{
-  path: '(/website.v2/|/)features/:type',
+  path: '/website.v2/features/:type',
   name: 'feature'
 }, {
-  path: '(/website.v2/|/)/docs/:section/:subsection',
+  path: '/website.v2//docs/:section/:subsection',
   name: 'doc'
 }, {
-  path: '(/website.v2/|/):page',
+  path: '/website.v2/:page',
   name: 'page'
 }, {
-  path: '(/website.v2/|/)',
+  path: '/website.v2/',
   name: 'home'
 }]);
 
