@@ -13334,18 +13334,17 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const devPath = '/website.v2/';
 /* harmony default export */ __webpack_exports__["a"] = ([{
-  path: "(".concat(devPath, "|/)features/:type"),
+  path: '/features/:type',
   name: 'feature'
 }, {
-  path: "(".concat(devPath, "|/)/docs/:section/:subsection"),
+  path: '/docs/:section/:subsection',
   name: 'doc'
 }, {
-  path: "(".concat(devPath, "|/):page"),
+  path: '/:page',
   name: 'page'
 }, {
-  path: "(".concat(devPath, "|/)"),
+  path: '/',
   name: 'home'
 }]);
 

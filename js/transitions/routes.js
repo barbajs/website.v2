@@ -1,20 +1,18 @@
-const devPath = '/website.v2/'
-
 export default [
   {
-    path: `(${devPath}|/)features/:type`,
+    path: '/features/:type',
     name: 'feature',
   },
   {
-    path: `(${devPath}|/)/docs/:section/:subsection`,
+    path: '/docs/:section/:subsection',
     name: 'doc',
   },
   {
-    path: `(${devPath}|/):page`,
+    path: '/:page',
     name: 'page',
   },
   {
-    path: `(${devPath}|/)`,
+    path: '/',
     name: 'home',
   },
-]
+];
