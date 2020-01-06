@@ -12846,6 +12846,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
     const $currentLogoShapes = $currentFeature.querySelector('.logo.only-big');
     const $nextLogo = $nextFeature.querySelector('.logo');
     const $nextLogoShapes = $nextFeature.querySelector('.logo.only-big');
+    current.container.querySelector('.menu-trigger').style.opacity = '0';
     const tl = __WEBPACK_IMPORTED_MODULE_1_gsap__["a" /* gsap */].timeline();
     $currentBox && tl.to($currentBox, {
       duration: 1,

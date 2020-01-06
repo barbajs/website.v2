@@ -542,6 +542,11 @@ html.js {
   html.js.wf-active, html.js.wf-inactive, html.js.ready {
     opacity: 1; }
 
+body.prevent-scroll {
+  overflow: hidden;
+  height: 100vh;
+  margin-left: calc(100vw - 100%); }
+
 body > svg {
   display: none; }
 
@@ -653,6 +658,16 @@ body {
 .header__infos__version {
   color: #2e5bdc;
   font-size: 1.1rem; }
+  [data-feature-slug='dependency-free'] .header__infos__version {
+    color: #38d1f1; }
+  [data-feature-slug='small-size'] .header__infos__version {
+    color: #04bf0c; }
+  [data-feature-slug='core'] .header__infos__version {
+    color: #ffa543; }
+  [data-feature-slug='router'] .header__infos__version {
+    color: #ec4343; }
+  [data-feature-slug='prefetch'] .header__infos__version {
+    color: #8c44d9; }
 
 .header__infos__docs {
   margin-left: 1rem;
@@ -690,6 +705,16 @@ body {
   background-color: rgba(46, 91, 220, 0.2);
   border-radius: 50%;
   cursor: pointer; }
+  [data-feature-slug='dependency-free'] .menu-trigger {
+    background-color: rgba(56, 209, 241, 0.2); }
+  [data-feature-slug='small-size'] .menu-trigger {
+    background-color: rgba(4, 191, 12, 0.2); }
+  [data-feature-slug='core'] .menu-trigger {
+    background-color: rgba(255, 165, 67, 0.2); }
+  [data-feature-slug='router'] .menu-trigger {
+    background-color: rgba(236, 67, 67, 0.2); }
+  [data-feature-slug='prefetch'] .menu-trigger {
+    background-color: rgba(140, 68, 217, 0.2); }
 
 .menu-trigger__shape {
   position: absolute;
@@ -700,8 +725,19 @@ body {
   stroke-width: 4px;
   stroke-dasharray: 160px;
   stroke-dashoffset: 160px;
-  transition: stroke-dashoffset 0.6s cubic-bezier(0.77, 0, 0.175, 1); }
-  .is-open .menu-trigger__shape {
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+  [data-feature-slug='dependency-free'] .menu-trigger__shape {
+    stroke: #38d1f1; }
+  [data-feature-slug='small-size'] .menu-trigger__shape {
+    stroke: #04bf0c; }
+  [data-feature-slug='core'] .menu-trigger__shape {
+    stroke: #ffa543; }
+  [data-feature-slug='router'] .menu-trigger__shape {
+    stroke: #ec4343; }
+  [data-feature-slug='prefetch'] .menu-trigger__shape {
+    stroke: #8c44d9; }
+  .is-open .menu-trigger__shape,
+  .menu-trigger:hover .menu-trigger__shape {
     stroke-dashoffset: 0; }
 
 .menu-trigger__github {
@@ -736,6 +772,16 @@ body {
   transition: top 0.4s, transform 0.4s, opacity 0.4s ease-in-out;
   /* stylelint-disable no-descending-specificity */
   /* stylelint-enable no-descending-specificity */ }
+  [data-feature-slug='dependency-free'] .menu-trigger__bar {
+    background-color: #38d1f1; }
+  [data-feature-slug='small-size'] .menu-trigger__bar {
+    background-color: #04bf0c; }
+  [data-feature-slug='core'] .menu-trigger__bar {
+    background-color: #ffa543; }
+  [data-feature-slug='router'] .menu-trigger__bar {
+    background-color: #ec4343; }
+  [data-feature-slug='prefetch'] .menu-trigger__bar {
+    background-color: #8c44d9; }
   .menu-trigger__bar:nth-child(2) {
     top: 35%; }
     .is-open .menu-trigger__bar:nth-child(2) {
@@ -1010,45 +1056,39 @@ body {
   color: white;
   background: #5a82f1;
   fill: white; }
-  [data-feature-slug='dependency-free'] [class*='button--'][class*='--fill'] {
+  [data-feature-slug='dependency-free'] [class*='button--'][class*='--fill']:not([class*='--black']) {
     background-color: #38d1f1;
     border-color: #38d1f1; }
-  [data-feature-slug='small-size'] [class*='button--'][class*='--fill'] {
+  [data-feature-slug='small-size'] [class*='button--'][class*='--fill']:not([class*='--black']) {
     background-color: #04bf0c;
     border-color: #04bf0c; }
-  [data-feature-slug='core'] [class*='button--'][class*='--fill'] {
+  [data-feature-slug='core'] [class*='button--'][class*='--fill']:not([class*='--black']) {
     background-color: #ffa543;
     border-color: #ffa543; }
-  [data-feature-slug='router'] [class*='button--'][class*='--fill'] {
+  [data-feature-slug='router'] [class*='button--'][class*='--fill']:not([class*='--black']) {
     background-color: #ec4343;
     border-color: #ec4343; }
-  [data-feature-slug='prefetch'] [class*='button--'][class*='--fill'] {
+  [data-feature-slug='prefetch'] [class*='button--'][class*='--fill']:not([class*='--black']) {
     background-color: #8c44d9;
     border-color: #8c44d9; }
-  [data-barba-namespace='about'] [class*='button--'][class*='--fill'] {
-    background-color: #2e5bdc;
-    border-color: #2e5bdc; }
-  [class*='button--'][class*='--fill']:hover {
+  [class*='button--'][class*='--fill']:not([class*='--black']):hover {
     background: #2e5bdc;
     border-color: #2e5bdc; }
-    [data-feature-slug='dependency-free'] [class*='button--'][class*='--fill']:hover {
+    [data-feature-slug='dependency-free'] [class*='button--'][class*='--fill']:not([class*='--black']):hover {
       background-color: #10c1e6;
       border-color: #10c1e6; }
-    [data-feature-slug='small-size'] [class*='button--'][class*='--fill']:hover {
+    [data-feature-slug='small-size'] [class*='button--'][class*='--fill']:not([class*='--black']):hover {
       background-color: #038d09;
       border-color: #038d09; }
-    [data-feature-slug='core'] [class*='button--'][class*='--fill']:hover {
+    [data-feature-slug='core'] [class*='button--'][class*='--fill']:not([class*='--black']):hover {
       background-color: #ff8d10;
       border-color: #ff8d10; }
-    [data-feature-slug='router'] [class*='button--'][class*='--fill']:hover {
+    [data-feature-slug='router'] [class*='button--'][class*='--fill']:not([class*='--black']):hover {
       background-color: #e51717;
       border-color: #e51717; }
-    [data-feature-slug='prefetch'] [class*='button--'][class*='--fill']:hover {
+    [data-feature-slug='prefetch'] [class*='button--'][class*='--fill']:not([class*='--black']):hover {
       background-color: #7228c2;
       border-color: #7228c2; }
-    [data-barba-namespace='about'] [class*='button--'][class*='--fill']:hover {
-      background-color: #1f46b8;
-      border-color: #1f46b8; }
 
 [class*='button--'][class*='--fill'][class*='--black'] {
   background: black;
@@ -2192,6 +2232,17 @@ body {
   [class*='homepage__list__item--']:first-child {
     position: relative; }
 
+.homepage__buttons {
+  display: flex;
+  flex-direction: column; }
+  @media only screen and (min-width: 48em) {
+    .homepage__buttons {
+      flex-direction: row; }
+      .homepage__buttons .button + .button {
+        margin-left: 2rem; } }
+  .homepage__buttons .button {
+    margin-top: 1rem; }
+
 .form {
   display: none; }
   @media only screen and (min-width: 48em) {
@@ -2477,48 +2528,3 @@ body {
 /*
  * Dev related stuff or crappy hotfixes…
  */
-body.prevent-scroll {
-  overflow: hidden;
-  height: 100vh;
-  margin-left: calc(100vw - 100%); }
-
-body {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 100vw;
-  min-height: 100vh; }
-
-main {
-  display: flex;
-  flex: 1; }
-
-.site-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1; }
-
-.site-content-inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1; }
-  .site-content-inner > :first-child {
-    margin-top: 0; }
-  .site-content-inner > :last-child {
-    margin-bottom: 0; }
-  .site-content-inner[data-barba-namespace='docs'] {
-    display: block;
-    padding: 0; }
-
-.homepage__buttons {
-  display: flex;
-  flex-direction: column; }
-  @media only screen and (min-width: 48em) {
-    .homepage__buttons {
-      flex-direction: row; }
-      .homepage__buttons .button + .button {
-        margin-left: 2rem; } }
-  .homepage__buttons .button {
-    margin-top: 1rem; }
