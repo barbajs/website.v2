@@ -12679,10 +12679,10 @@ for (let i = 0; i < docs.length; i++) {
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   from: {
-    route: 'doc'
+    route: 'docs'
   },
   to: {
-    route: 'doc'
+    route: 'docs'
   },
 
   leave(_ref) {
