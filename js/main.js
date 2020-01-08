@@ -14377,7 +14377,7 @@ var iOSVersion=SimpleDb.getIOSVersion(ua);var isUnsupportedIOS=0<iOSVersion&&iOS
 var androidVersion=SimpleDb.getAndroidVersion(ua);var isUnsupportedAndroid=0<androidVersion&&androidVersion<4.5;if(ua.indexOf('MSIE ')>0||ua.indexOf('Trident/')>0||ua.indexOf('Edge/')>0||isUnsupportedIOS||isUnsupportedAndroid){return false;}else{return true;}};/**
      * Returns true if the backing IndexedDB store is the Node IndexedDBShim
      * (see https://github.com/axemclion/IndexedDBShim).
-     */SimpleDb.isMockPersistence=function(){var _a;return typeof process!=='undefined'&&((_a=__webpack_require__.i({"SLACK_WEBHOOK":undefined}))===null||_a===void 0?void 0:_a.USE_MOCK_PERSISTENCE)==='YES';};/** Helper to get a typed SimpleDbStore from a transaction. */SimpleDb.getStore=function(txn,store){return txn.store(store);};// visible for testing
+     */SimpleDb.isMockPersistence=function(){var _a;return typeof process!=='undefined'&&((_a=__webpack_require__.i({"SLACK_WEBHOOK":"https://hooks.slack.com/services/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"}))===null||_a===void 0?void 0:_a.USE_MOCK_PERSISTENCE)==='YES';};/** Helper to get a typed SimpleDbStore from a transaction. */SimpleDb.getStore=function(txn,store){return txn.store(store);};// visible for testing
 /** Parse User Agent to determine iOS version. Returns -1 if not found. */SimpleDb.getIOSVersion=function(ua){var iOSVersionRegex=ua.match(/i(?:phone|pad|pod) os ([\d_]+)/i);var version=iOSVersionRegex?iOSVersionRegex[1].split('_').slice(0,2).join('.'):'-1';return Number(version);};// visible for testing
 /** Parse User Agent to determine Android version. Returns -1 if not found. */SimpleDb.getAndroidVersion=function(ua){var androidVersionRegex=ua.match(/Android ([\d.]+)/i);var version=androidVersionRegex?androidVersionRegex[1].split('.').slice(0,2).join('.'):'-1';return Number(version);};SimpleDb.prototype.setVersionChangeListener=function(versionChangeListener){this.db.onversionchange=function(event){return versionChangeListener(event);};};SimpleDb.prototype.runTransaction=function(mode,objectStores,transactionFn){return tslib.__awaiter(this,void 0,void 0,function(){var readonly,idempotent,attemptNumber,_loop_1,this_1,state_1;return tslib.__generator(this,function(_a){switch(_a.label){case 0:readonly=mode.startsWith('readonly');idempotent=mode.endsWith('idempotent');attemptNumber=0;_loop_1=function _loop_1(){var transaction,transactionFnResult,error_1,retryable;return tslib.__generator(this,function(_a){switch(_a.label){case 0:++attemptNumber;transaction=SimpleDbTransaction.open(this_1.db,readonly?'readonly':'readwrite',objectStores);_a.label=1;case 1:_a.trys.push([1,3,,4]);transactionFnResult=transactionFn(transaction).catch(function(error){// Abort the transaction if there was an error.
 transaction.abort(error);// We cannot actually recover, and calling `abort()` will cause the transaction's
@@ -31299,7 +31299,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 class Form extends __WEBPACK_IMPORTED_MODULE_0_kapla__["Component"] {
   load() {
     const dragEvents = ['dragenter', 'dragover', 'dragleave', 'drop'];
-    this.url = undefined;
+    this.url = "https://hooks.slack.com/services/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";
     this.file = [];
     dragEvents.forEach(e => {
       this.$refs.dropArea.addEventListener(e, this.preventDefaults.bind(this), false);
