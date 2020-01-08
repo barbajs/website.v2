@@ -31299,7 +31299,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 class Form extends __WEBPACK_IMPORTED_MODULE_0_kapla__["Component"] {
   load() {
     const dragEvents = ['dragenter', 'dragover', 'dragleave', 'drop'];
-    this.url = 'https://hooks.slack.com/services/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';
+    this.url = '***REMOVED***';
     this.file = [];
     dragEvents.forEach(e => {
       this.$refs.dropArea.addEventListener(e, this.preventDefaults.bind(this), false);
