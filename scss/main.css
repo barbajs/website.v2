@@ -2323,6 +2323,7 @@ body {
 .form__input--text {
   padding: 1rem;
   color: white;
+  font-family: monospace;
   background: #2448b0;
   border: 0; }
   @media only screen and (min-width: 48em) {
