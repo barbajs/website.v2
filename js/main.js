@@ -2794,20 +2794,6 @@
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var freeGlobal = __webpack_require__(25);
-/** Detect free variable `self`. */
-
-
-var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
-/** Used as a reference to the global object. */
-
-var root = freeGlobal || freeSelf || Function('return this')();
-module.exports = root;
-
-/***/ }),
-/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2843,6 +2829,20 @@ module.exports = root;
 var gsapWithCSS = __WEBPACK_IMPORTED_MODULE_0__gsap_core_js__["a" /* gsap */].registerPlugin(__WEBPACK_IMPORTED_MODULE_1__CSSPlugin_js__["a" /* CSSPlugin */]) || __WEBPACK_IMPORTED_MODULE_0__gsap_core_js__["a" /* gsap */]; // to protect from tree shaking
 
 
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var freeGlobal = __webpack_require__(25);
+/** Detect free variable `self`. */
+
+
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+/** Used as a reference to the global object. */
+
+var root = freeGlobal || freeSelf || Function('return this')();
+module.exports = root;
 
 /***/ }),
 /* 3 */
@@ -6463,7 +6463,7 @@ exports.validateNamespace = validateNamespace;
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(3),
-    root = __webpack_require__(1);
+    root = __webpack_require__(2);
 /* Built-in method references that are verified to be native. */
 
 
@@ -6474,7 +6474,7 @@ module.exports = Map;
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(1);
+var root = __webpack_require__(2);
 /** Built-in value references. */
 
 
@@ -12294,7 +12294,7 @@ module.exports = eq;
 /* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(1),
+/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(2),
     stubFalse = __webpack_require__(119);
 /** Detect free variable `exports`. */
 
@@ -12629,28 +12629,54 @@ const db = __WEBPACK_IMPORTED_MODULE_0_firebase_app___default.a.firestore();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(1);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  leave(data) {
-    return __WEBPACK_IMPORTED_MODULE_0_gsap__["a" /* gsap */].to(data.current.container, {
-      duration: 0.4,
-      opacity: 0,
-      ease: 'power4.in',
-      onComplete: () => {
-        data.current.container.style.display = 'none';
-      }
-    }).then();
-  },
-
-  enter(data) {
+  enter(_ref) {
+    let {
+      current,
+      next
+    } = _ref;
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    return __WEBPACK_IMPORTED_MODULE_0_gsap__["a" /* gsap */].from(data.next.container, {
+    const transitionTitle = document.querySelector('.transition__title');
+    const transitionBackground = document.querySelector('.transition__background');
+    console.log('transitionBackground', transitionBackground);
+    transitionTitle.innerHTML = next.container.dataset.barbaNamespace;
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    return __WEBPACK_IMPORTED_MODULE_0_gsap__["a" /* gsap */].timeline({
+      onComplete: () => {
+        transitionTitle.innerHTML = '';
+      }
+    }).set(transitionBackground, {
+      clearProps: 'all'
+    }).set(transitionTitle, {
+      y: 100
+    }).to(transitionBackground, {
       duration: 0.7,
+      x: '0',
+      ease: 'power4',
+      onComplete: () => {
+        current.container.style.display = 'none';
+      }
+    }).to(transitionTitle, 0.5, {
+      y: 0,
+      opacity: 1,
+      ease: 'power4'
+    }, 0.1).from(next.container, {
+      duration: 0.1,
+      opacity: 0,
+      ease: 'power4'
+    }).to(transitionBackground, {
+      duration: 0.7,
+      x: '100%',
+      ease: 'power4.inOut'
+    }, 1).to(transitionTitle, 0.7, {
+      y: -100,
       opacity: 0,
       ease: 'power4.inOut'
-    }).then();
+    }, 0.8).then();
   }
 
 });
@@ -12660,7 +12686,7 @@ const db = __WEBPACK_IMPORTED_MODULE_0_firebase_app___default.a.firestore();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(1);
 
 const {
   docs
@@ -12767,7 +12793,7 @@ for (let i = 0; i < docs.length; i++) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__(1);
 
 
 /**
@@ -12847,19 +12873,20 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
     const $nextLogo = $nextFeature.querySelector('.logo');
     const $nextLogoShapes = $nextFeature.querySelector('.logo.only-big');
     current.container.querySelector('.menu-trigger').style.opacity = '0';
+    current.container.querySelector('.feature__nav').style.opacity = '0';
     const tl = __WEBPACK_IMPORTED_MODULE_1_gsap__["a" /* gsap */].timeline();
     $currentBox && tl.to($currentBox, {
-      duration: 1,
+      duration: 0.7,
       x: goingForward ? -window.innerWidth * 0.3 : window.innerWidth * 0.3,
       ease: 'power4.inOut'
     }, 0);
     tl.to($currentContainer, {
-      duration: 1.5,
+      duration: 1,
       x: goingForward ? -window.innerWidth : window.innerWidth,
       rotationY: goingForward ? '45deg' : '-45deg',
       ease: 'power4.inOut'
     }, 0).to($currentLogoShapes, {
-      duration: 1,
+      duration: 0.7,
       opacity: 0,
       ease: 'power4.inOut'
     }, 0).to($currentLogo, {
@@ -12867,7 +12894,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
       opacity: 0,
       ease: 'power4.inOut'
     }, 0).from($nextLogoShapes, {
-      duration: 1,
+      duration: 0.7,
       opacity: 0,
       ease: 'power4'
     }, 0).from($nextLogo, {
@@ -12875,7 +12902,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
       opacity: 0,
       ease: 'power4'
     }, 0).from($nextContainer, {
-      duration: 1.5,
+      duration: 1,
       x: goingForward ? window.innerWidth : -window.innerWidth,
       rotationY: goingForward ? '-45deg' : '45deg',
       ease: 'power4',
@@ -12886,7 +12913,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
       }
     }, 0.5);
     $nextBox && tl.from($nextBox, {
-      duration: 1.5,
+      duration: 0.7,
       x: goingForward ? window.innerWidth * 0.5 : -window.innerWidth * 0.5,
       ease: 'power4'
     }, 0.5);
@@ -12900,7 +12927,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(1);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   sync: true,
@@ -12998,7 +13025,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app__ = __webpack_require__(5);
 
  // DEV
@@ -13229,7 +13256,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__(1);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -13247,7 +13274,6 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
     const featureContainer = container.querySelector('.feature-outer');
     const featureBox = container.querySelector('.feature__box');
     const featureInstance = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__app__["b" /* getInstance */])(container, 'feature');
-    console.log(__WEBPACK_IMPORTED_MODULE_0__app__["b" /* getInstance */]);
     const tl = __WEBPACK_IMPORTED_MODULE_1_gsap__["a" /* gsap */].timeline();
     featureBox && tl.from(featureBox, {
       duration: 1.5,
@@ -13274,7 +13300,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(1);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   to: {
@@ -27389,7 +27415,7 @@ __WEBPACK_IMPORTED_MODULE_0__gsap_core_js__["a" /* gsap */].registerPlugin(CSSPl
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(3),
-    root = __webpack_require__(1);
+    root = __webpack_require__(2);
 /* Built-in method references that are verified to be native. */
 
 
@@ -27438,7 +27464,7 @@ module.exports = Hash;
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(3),
-    root = __webpack_require__(1);
+    root = __webpack_require__(2);
 /* Built-in method references that are verified to be native. */
 
 
@@ -27450,7 +27476,7 @@ module.exports = Promise;
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(3),
-    root = __webpack_require__(1);
+    root = __webpack_require__(2);
 /* Built-in method references that are verified to be native. */
 
 
@@ -27525,7 +27551,7 @@ module.exports = Stack;
 /* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(1);
+var root = __webpack_require__(2);
 /** Built-in value references. */
 
 
@@ -27537,7 +27563,7 @@ module.exports = Uint8Array;
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(3),
-    root = __webpack_require__(1);
+    root = __webpack_require__(2);
 /* Built-in method references that are verified to be native. */
 
 
@@ -28066,7 +28092,7 @@ module.exports = cacheHas;
 /* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(1);
+var root = __webpack_require__(2);
 /** Used to detect overreaching core-js shims. */
 
 
@@ -30668,26 +30694,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_kapla__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_kapla___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_kapla__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__(1);
+
 
 /* harmony default export */ __webpack_exports__["default"] = (class extends __WEBPACK_IMPORTED_MODULE_0_kapla__["Component"] {
   load() {
     const subscriber = this.subscribe('menu-trigger');
-    const overlay = this.$el.querySelector('.menu__overlay');
     subscriber.on('menu:open', this.open);
     subscriber.on('menu:close', this.close);
     this.delegateClick = 'a'; // Close menu if click on overlay
 
-    overlay.addEventListener('click', () => {
+    this.$refs.overlay.addEventListener('click', () => {
       this.onOverlayClick();
     });
   }
 
   open() {
-    this.$el.classList.add('is-open');
+    return __WEBPACK_IMPORTED_MODULE_1_gsap__["a" /* gsap */].timeline({
+      onComplete: () => {
+        this.$el.classList.add('is-open');
+      }
+    }).set(this.$refs.item, {
+      y: 50,
+      opacity: 0
+    }).to(this.$refs.panel, {
+      duration: 0.5,
+      x: 0,
+      ease: 'power4'
+    }, 0).to(this.$refs.item, {
+      duration: 0.3,
+      y: 0,
+      opacity: 1,
+      ease: 'power4',
+      stagger: 0.075
+    }, 0.25).then();
   }
 
   close() {
-    this.$el.classList.remove('is-open');
+    return __WEBPACK_IMPORTED_MODULE_1_gsap__["a" /* gsap */].timeline({
+      onComplete: () => {
+        this.$el.classList.remove('is-open');
+      }
+    }).to(this.$refs.panel, {
+      duration: 0.5,
+      x: '110%',
+      ease: 'power4.inOut'
+    }, 0).then();
   }
 
   onOverlayClick() {
@@ -30799,8 +30851,10 @@ class DocsNavLateral extends __WEBPACK_IMPORTED_MODULE_0_kapla__["Component"] {
     const subscriber = this.subscribe('docs-nav');
     subscriber.on('link:close', this.close);
     this.delegateClick = 'button';
-    const navLateralLinks = this.$el.querySelectorAll('.docs__nav__lateral__link');
-    navLateralLinks.forEach(link => {
+  }
+
+  init() {
+    this.$refs.link.forEach(link => {
       link.addEventListener('click', () => {
         this.close();
       });
@@ -30897,7 +30951,7 @@ const bodymovins = [{
       autoplay: false,
       animationData: this.bodymovin.data
     });
-    this.animation.setSpeed(1.25);
+    this.animation.setSpeed(1.5);
   }
 
   animateOut() {
@@ -31203,7 +31257,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__barba_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__barba_core__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_kapla__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_kapla___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_kapla__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_gsap__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_gsap__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__source_js_utils_dom__ = __webpack_require__(142);
 
 
@@ -31232,6 +31286,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   mouseEnter(index) {
     this.$logo.classList.add('gray');
+    const {
+      featureSlug
+    } = this.$refs.listItem[index].dataset;
+    const container = document.querySelector('[data-barba="container"]');
+    container.dataset.featureSlug = featureSlug;
     __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$refs.listItem[index]);
     __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$items[index]);
     __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$items[index], {
@@ -31255,6 +31314,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return;
     }
 
+    const container = document.querySelector('[data-barba="container"]');
+    container.dataset.featureSlug = '';
     this.$logo.classList.remove('gray');
     __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$refs.listItem[index]);
     __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$items[index]);
