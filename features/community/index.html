@@ -38,7 +38,7 @@
   <script>
     window.BARBA = {
       root: '/website.v2/',
-      menu: JSON.parse('[{"title":"Features","url":"features/dependency-free","slug":"/features","subpages":[{"title":"Dependency Free","url":"features/dependency-free","modifier":"dependency-free","prevpage":{"label":"About","url":"features/about/"},"nextpage":{"label":"Small size","url":"features/small-size/"}},{"title":"Small size","url":"features/small-size","modifier":"small-size","prevpage":{"label":"Dependency Free","url":"features/dependency-free/"},"nextpage":{"label":"B/Core","url":"features/core/"}},{"title":"B/Core","url":"features/core","modifier":"core","prevpage":{"label":"Small size","url":"features/small-size/"},"nextpage":{"label":"B/Router","url":"features/router/"}},{"title":"B/Router","url":"features/router","modifier":"router","prevpage":{"label":"B/Core","url":"features/core/"},"nextpage":{"label":"B/Prefetch","url":"features/prefetch/"}},{"title":"B/Prefetch","url":"features/prefetch","modifier":"prefetch","prevpage":{"label":"B/Router","url":"features/router/"},"nextpage":{"label":"About","url":"features/about/"}},{"title":"About","url":"features/about","modifier":"about","prevpage":{"label":"B/Prefetch","url":"features/prefetch/"},"nextpage":{"label":"Dependency Free","url":"features/dependency-free/"}}]},{"title":"Example","url":"example","slug":"/example"},{"title":"Showcase","url":"showcase","slug":"/showcase"},{"title":"Docs","url":"docs/getstarted/intro","slug":"/docs"}]'),
+      menu: JSON.parse('[{"title":"Features","url":"features/fast-flexible","slug":"/features","subpages":[{"title":"User friendly","url":"features/user-friendly"},{"title":"Easy peasy","url":"features/easy-peasy"},{"title":"Smart","url":"features/smart"},{"title":"Extensible","url":"features/extensible"},{"title":"Futureproof","url":"features/futureproof"},{"title":"Community","url":"features/community"}]},{"title":"Examples","url":"examples","slug":"/examples"},{"title":"Showcase","url":"showcase","slug":"/showcase"},{"title":"Docs","url":"docs/getstarted/intro","slug":"/docs"}]'),
       docs: JSON.parse('[{"title":"Get Started","url":"docs/getstarted/intro","path":"/docs/getstarted","nextpage":{"label":"USER GUIDE","url":"docs/userguide/markup"}},{"title":"User Guide (Core)","url":"docs/userguide/markup","path":"/docs/userguide","subpages":[{"title":"Markup","url":"docs/userguide/markup","prevpage":{"label":"GET STARTED","url":"docs/getstarted/intro"},"nextpage":{"label":"Syntax","url":"docs/userguide/syntax"}},{"title":"Syntax","url":"docs/userguide/syntax","prevpage":{"label":"Markup","url":"docs/userguide/markup"},"nextpage":{"label":"PLUGINS","url":"docs/plugins/css"}}]},{"title":"Plugins","url":"/docs/plugins/css","path":"/docs/plugins","subpages":[{"title":"Css","url":"docs/plugins/css","prevpage":{"label":"USER GUIDE","url":"docs/userguide/markup"},"nextpage":{"label":"Router","url":"docs/plugins/router"}},{"title":"Router","url":"docs/plugins/router","prevpage":{"label":"Css","url":"docs/plugins/css"},"nextpage":{"label":"Prefetch","url":"docs/plugins/prefetch"}},{"title":"Prefetch","url":"docs/plugins/prefetch","prevpage":{"label":"Router","url":"docs/plugins/router"},"nextpage":{"label":"Preset","url":"docs/plugins/preset"}},{"title":"Preset","url":"docs/plugins/preset","prevpage":{"label":"Prefetch","url":"docs/plugins/prefetch"},"nextpage":{"label":"Head","url":"docs/plugins/head"}},{"title":"Head","url":"docs/plugins/head","prevpage":{"label":"Preset","url":"docs/plugins/preset"}}]}]'),
     }
 
@@ -49,8 +49,7 @@
 
 <body data-barba="wrapper">
   <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 21 15" id="barba-arrow-next" xmlns="http://www.w3.org/2000/svg"><path d="M16.243 8.142H0v-2h16.385l-4.728-4.728L13.07 0l5.657 5.657 1.414 1.414-7.07 7.071-1.415-1.414 4.586-4.586z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 21 15" id="barba-arrow-prev" xmlns="http://www.w3.org/2000/svg"><path d="M4.757 8.142H21v-2H4.615l4.728-4.728L7.93 0 2.272 5.657.858 7.07l7.07 7.071 1.415-1.414-4.586-4.586z" fill-rule="evenodd"/></symbol><symbol viewBox="0 0 32 32" id="barba-b" xmlns="http://www.w3.org/2000/svg"><defs><path d="M8 10c-4.418 0-8 3.59-8 8 0 4.418 3.59 8 8 8H0V0h8v10z" id="ca"/></defs><g fill-rule="evenodd"><use stroke-width="2" xlink:href="#ca" transform="translate(9.5 3)"/><path d="M9.5 21c0 4.418 3.59 8 8 8h0c4.418 0 8-3.59 8-8h0c0-4.418-3.59-8-8-8h0c-4.418 0-8 3.59-8 8h0z" stroke-width="2"/></g></symbol><symbol id="barba-download" viewBox="0 0 37.1 37.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style>.dst0{fill-rule:evenodd;clip-rule:evenodd}.dst0,.dst1{fill:#2e5bdc}</style><g transform="translate(-463 -796)"><g id="dGroup-17" transform="translate(160 546)"><g id="dGroup-15" transform="translate(303 250)"><g id="dGroup-7"><path id="dCombined-Shape-Copy-2" class="dst0" d="M16.5 20.8l-5.3-5.3-2.9 2.9 7.5 7.5 2.9 2.9 10.5-10.5-2.9-2.9-5.6 5.6V4h-4.1v16.8z"/><path id="dOval-4" class="dst1" d="M18.6 33c8 0 14.4-6.5 14.4-14.4S26.5 4.1 18.6 4.1 4.1 10.6 4.1 18.6 10.6 33 18.6 33zm0 4.1C8.3 37.1 0 28.8 0 18.6S8.3 0 18.6 0s18.6 8.3 18.6 18.6-8.4 18.5-18.6 18.5z"/></g></g></g></g></symbol><symbol id="barba-external" viewBox="0 0 30 30" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style>.est0{fill:#2e5bdc}</style><g transform="translate(-880 -939)"><g id="eGroup-3-Copy" transform="translate(540 699)"><g id="eGroup-2" transform="translate(5 240)"><g id="eGroup-4" transform="translate(291)"><g id="eGroup" transform="translate(44)"><path id="eRectangle" class="est0" d="M24 26v-6h4v6c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V6c0-2.2 1.8-4 4-4h6v4H4v20h20zM10 6H4v20h20v-6h4v6c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V6c0-2.2 1.8-4 4-4h6v4zm13.3-2H16V0h14v14h-4V7l-7.3 7.3-2.8-2.8L23.3 4z"/></g></g></g></g></g></symbol><symbol id="barba-eye" viewBox="0 0 47.7 35.8" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style>.fst0,.fst1{fill:#2e5bdc}.fst1{fill-rule:evenodd;clip-rule:evenodd}</style><g transform="translate(-165 -796)"><g id="fGroup-17" transform="translate(160 546)"><g id="fGroup-6" transform="translate(5 250)"><g id="fGroup-5"><path id="fCombined-Shape" class="fst0" d="M24.6 31c6.5 0 12.4-3.8 15.1-9.5C37 15.8 31.2 12 24.6 12s-12.4 3.8-15.1 9.5C12.2 27.2 18 31 24.6 31zm0-23.8c9.3 0 17.3 6 20.2 14.3-2.9 8.3-10.9 14.3-20.2 14.3s-17.3-6-20.2-14.3C7.3 13.1 15.2 7.2 24.6 7.2z"/><path class="fst0" d="M7.1 13.6c2.8-5.7 9-8.8 17.5-8.8S39.2 7.9 42 13.6h5.2C43.9 4.3 35 0 24.6 0S5.2 4.3 1.9 13.6h5.2zm17.5-8.8c8.5 0 14.7 3.1 17.5 8.8h5.2C43.9 4.3 35 0 24.6 0S5.2 4.3 1.9 13.6h5.2c2.8-5.7 9-8.8 17.5-8.8z"/><circle id="fOval-3" class="fst1" cx="24.6" cy="21.5" r="4.8"/></g></g></g></g></symbol><symbol viewBox="0 0 13 15" id="barba-github" xmlns="http://www.w3.org/2000/svg"><path d="M4.259 15c.376 0 .359-.75.359-1 0-.223-.009-.815-.013-1.6-2.633.569-3.189-1.26-3.189-1.26-.43-1.087-1.05-1.377-1.05-1.377-.86-.583.065-.572.065-.572.95.067 1.45.97 1.45.97.844 1.437 2.214 1.022 2.754.781.086-.608.33-1.022.6-1.257-2.1-.238-4.31-1.045-4.31-4.65 0-1.026.368-1.866.974-2.524-.098-.238-.422-1.194.092-2.49 0 0 .795-.252 2.603.965a9.138 9.138 0 012.37-.317 9.148 9.148 0 012.37.317C11.14-.231 11.932.022 11.932.022c.516 1.295.192 2.251.094 2.49.607.657.973 1.497.973 2.524 0 3.613-2.213 4.409-4.321 4.642.34.29.642.864.642 1.742 0 1.257-.011 2.271-.011 2.58 0 .252 0 1 .357 1H4.26z" fill-rule="nonzero"/></symbol><symbol viewBox="0 0 50 50" id="barba-submit" xmlns="http://www.w3.org/2000/svg"><style>.hst0,.hst1{fill-rule:evenodd;clip-rule:evenodd}.hst0{fill:#2e5bdc}.hst1{stroke:#2e5bdc}.hcross{fill:#fff}</style><path class="hst0" d="M25 40c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15-8.284 0-15 6.716-15 15 0 8.284 6.716 15 15 15z"/><path class="hst1" opacity=".2" d="M48.5 25c0 12.979-10.521 23.5-23.5 23.5S1.5 37.979 1.5 25 12.021 1.5 25 1.5 48.5 12.021 48.5 25z" stroke-width="3"/><g class="hcross"><rect x="19" y="24" width="12" height="2" rx="1"/><rect x="24" y="19" width="2" height="12" rx="1"/></g></symbol><symbol viewBox="0 0 9 9" id="barba-triangle" xmlns="http://www.w3.org/2000/svg"><path d="M7.989 3.85L1.564.638C.91.311.5.564.5 1.297v6c0 .738.406.988 1.064.659L7.99 4.744c.618-.31.618-.584 0-.894z" fill-rule="evenodd"/></symbol><symbol class="jbarba-upload" viewBox="0 0 52 41" id="barba-upload" xmlns="http://www.w3.org/2000/svg"><path d="M24.657 1.414L18 8.071l1.414 1.414L25 3.9V30h2V3.757l5.728 5.728 1.414-1.414-6.657-6.657L26.071 0l-1.414 1.414z" stroke-width="2"/><path d="M51 20v15a5 5 0 01-5 5H6a5 5 0 01-5-5V20" stroke-width="2"/></symbol><symbol viewBox="0 0 32 32" id="social-github" xmlns="http://www.w3.org/2000/svg"><path d="M12.685 28.205c.556 0 .53-1.12.53-1.493 0-.334-.012-1.217-.019-2.39-3.894.85-4.716-1.885-4.716-1.885-.636-1.623-1.554-2.055-1.554-2.055-1.271-.873.096-.855.096-.855 1.405.1 2.144 1.449 2.144 1.449 1.25 2.148 3.277 1.527 4.075 1.167.127-.908.489-1.528.889-1.879-3.109-.355-6.377-1.56-6.377-6.946 0-1.535.545-2.79 1.441-3.772-.144-.356-.625-1.784.137-3.72 0 0 1.176-.377 3.85 1.441a13.39 13.39 0 013.505-.473c1.189.006 2.387.161 3.505.473 2.672-1.818 3.846-1.44 3.846-1.44.764 1.935.283 3.363.139 3.719.898.983 1.44 2.237 1.44 3.772 0 5.4-3.274 6.588-6.393 6.936.503.434.95 1.29.95 2.602 0 1.88-.017 3.395-.017 3.856 0 .376 0 1.495.529 1.493 0 .002-8 0-8 0z" fill-rule="nonzero"/></symbol><symbol viewBox="0 0 32 32" id="social-twitter" xmlns="http://www.w3.org/2000/svg"><path d="M25.655 12.559c.01.192.013.386.013.577 0 5.904-4.492 12.708-12.706 12.708-2.523 0-4.869-.74-6.846-2.007.35.041.705.062 1.065.062a8.963 8.963 0 005.546-1.91 4.47 4.47 0 01-4.171-3.1 4.564 4.564 0 002.017-.078 4.47 4.47 0 01-3.582-4.38v-.056a4.455 4.455 0 002.023.56A4.466 4.466 0 017.632 8.97a12.677 12.677 0 009.205 4.667 4.51 4.51 0 01-.115-1.019 4.463 4.463 0 014.465-4.463 4.46 4.46 0 013.26 1.409 8.993 8.993 0 002.836-1.084 4.482 4.482 0 01-1.964 2.47 8.933 8.933 0 002.565-.702 9.018 9.018 0 01-2.23 2.31z" fill-rule="nonzero"/></symbol><symbol viewBox="0 0 30 31" id="ui-flexible" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-4 -1)" fill-rule="evenodd"><rect opacity=".3" x="16" y="1" width="18" height="18" rx="9"/><rect x="22" y="7" width="6" height="6" rx="3"/><rect x="5" y="7" width="6" height="6" rx="3"/><rect x="5" y="25" width="6" height="6" rx="3"/><rect x="23" y="25" width="6" height="6" rx="3"/><g stroke-linecap="square" stroke-width="2"><path d="M8 17v4M8 21l-2-2M10 19l-2 2"/></g><g stroke-linecap="square" stroke-width="2"><path d="M19 28h-4M15 28l2-2M17 30l-2-2"/></g></g></symbol></svg>
-  <div data-barba="container" data-barba-namespace="feature" 
-    data-feature-slug="prefetch" >
+  <div data-barba="container" data-barba-namespace="feature">
 
     <header class="site-header header" role="banner" data-component="header">
   <div class="header__wrapper">
@@ -101,7 +100,7 @@
         <!-- Page -->
         
         <li class="menu__pages__item">
-          <a class="menu__pages__item__link is-active" href="/website.v2/features/dependency-free">
+          <a class="menu__pages__item__link is-active" href="/website.v2/features/fast-flexible">
             Features
           </a>
 
@@ -112,62 +111,62 @@
 
               <!-- Subpage -->
               
-              <li class="menu-subpages__item dependency-free ">
-                <a class="menu-subpages__item__link" href="/website.v2/features/dependency-free">
+              <li class="menu-subpages__item  ">
+                <a class="menu-subpages__item__link" href="/website.v2/features/user-friendly">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
-                    Dependency Free
+                    User friendly
                   </span>
                 </a>
               </li>
               
-              <li class="menu-subpages__item small-size ">
-                <a class="menu-subpages__item__link" href="/website.v2/features/small-size">
+              <li class="menu-subpages__item  ">
+                <a class="menu-subpages__item__link" href="/website.v2/features/easy-peasy">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
-                    Small size
+                    Easy peasy
                   </span>
                 </a>
               </li>
               
-              <li class="menu-subpages__item core ">
-                <a class="menu-subpages__item__link" href="/website.v2/features/core">
+              <li class="menu-subpages__item  ">
+                <a class="menu-subpages__item__link" href="/website.v2/features/smart">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
-                    B/Core
+                    Smart
                   </span>
                 </a>
               </li>
               
-              <li class="menu-subpages__item router ">
-                <a class="menu-subpages__item__link" href="/website.v2/features/router">
+              <li class="menu-subpages__item  ">
+                <a class="menu-subpages__item__link" href="/website.v2/features/extensible">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
-                    B/Router
+                    Extensible
                   </span>
                 </a>
               </li>
               
-              <li class="menu-subpages__item prefetch is-active">
-                <a class="menu-subpages__item__link" href="/website.v2/features/prefetch">
+              <li class="menu-subpages__item  ">
+                <a class="menu-subpages__item__link" href="/website.v2/features/futureproof">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
-                    B/Prefetch
+                    Futureproof
                   </span>
                 </a>
               </li>
               
-              <li class="menu-subpages__item about ">
-                <a class="menu-subpages__item__link" href="/website.v2/features/about">
+              <li class="menu-subpages__item  is-active">
+                <a class="menu-subpages__item__link" href="/website.v2/features/community">
                   <div class="menu-subpages__item__link__line">
                   </div>
                   <span class="menu-subpages__item__link__label">
-                    About
+                    Community
                   </span>
                 </a>
               </li>
@@ -182,8 +181,8 @@
         </li>
         
         <li class="menu__pages__item">
-          <a class="menu__pages__item__link " href="/website.v2/example">
-            Example
+          <a class="menu__pages__item__link " href="/website.v2/examples">
+            Examples
           </a>
 
           <!-- Subpages -->
@@ -260,9 +259,10 @@
       <div class="site-content">
         <div class="site-content-inner">
 
-          <div class="feature" data-component="feature" data-feature-slug="prefetch"
-  data-feature-order="4">
-  <div class="logo featured featured--prefetch">
+          
+<div class="feature" data-component="feature" data-feature-slug="community"
+  data-feature-order="5">
+  <div class="logo featured featured--5">
   <svg class="" viewBox="0 0 568 134" version="1.1" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <g class="base" opacity="1" stroke="#2E5BDC" stroke-width="5px" fill="#fff">
@@ -313,7 +313,6 @@
           <path class="js__circle" x="0" y="0" d="M0 0 C  0 -52 79 -52 79 0 C 79 52 0 52 0 0 Z" />
           <rect class="js__rect__alternate" x="1" y="-91" width="38" height="128" />
         </g>
-
 
         <g class="js__letter" stroke="none" fill="#2E5BDC" transform="translate(-1, 50)">
           <path
@@ -515,34 +514,40 @@
       </g>
     </g> -->
 
-
     <g class="links">
-      <a xlink:href="/website.v2/features/dependency-free/" href="/website.v2/features/dependency-free/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="0" y="0" width="95" height="134" />
-      </a>
-      <a xlink:href="/website.v2/features/small-size/" href="/website.v2/features/small-size/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="95" y="0" width="95" height="134" />
-      </a>
-      <a xlink:href="/website.v2/features/core/" href="/website.v2/features/core/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="190" y="0" width="95" height="134" />
-      </a>
-      <a xlink:href="/website.v2/features/router/" href="/website.v2/features/router/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="285" y="0" width="95" height="134" />
-      </a>
-      <a xlink:href="/website.v2/features/prefetch/" href="/website.v2/features/prefetch/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="380" y="0" width="95" height="134" />
-      </a>
-      <a xlink:href="/website.v2/features/about/" href="/website.v2/features/about/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="475" y="0" width="95" height="134" />
-      </a>
+      
+      
+      
+        <a xlink:href="/website.v2/features/user-friendly" href="/website.v2/features/user-friendly">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="0" y="0" width="95" height="134" />
+        </a>
+      
+        <a xlink:href="/website.v2/features/easy-peasy" href="/website.v2/features/easy-peasy">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="95" y="0" width="95" height="134" />
+        </a>
+      
+        <a xlink:href="/website.v2/features/smart" href="/website.v2/features/smart">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="190" y="0" width="95" height="134" />
+        </a>
+      
+        <a xlink:href="/website.v2/features/extensible" href="/website.v2/features/extensible">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="285" y="0" width="95" height="134" />
+        </a>
+      
+        <a xlink:href="/website.v2/features/futureproof" href="/website.v2/features/futureproof">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="380" y="0" width="95" height="134" />
+        </a>
+      
+        <a xlink:href="/website.v2/features/community" href="/website.v2/features/community">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="475" y="0" width="95" height="134" />
+        </a>
+      
     </g>
-
-
   </svg>
 </div>
 
   <div class="big-shape-outer">
-    <div class="logo only-big can-move detail-feature featured--prefetch">
+    <div class="logo only-big can-move detail-feature featured--5">
   <svg class="" viewBox="0 0 568 134" version="1.1" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <g class="base" opacity="1" stroke="#2E5BDC" stroke-width="5px" fill="#fff">
@@ -593,7 +598,6 @@
           <path class="js__circle" x="0" y="0" d="M0 0 C  0 -52 79 -52 79 0 C 79 52 0 52 0 0 Z" />
           <rect class="js__rect__alternate" x="1" y="-91" width="38" height="128" />
         </g>
-
 
         <g class="js__letter" stroke="none" fill="#2E5BDC" transform="translate(-1, 50)">
           <path
@@ -795,129 +799,82 @@
       </g>
     </g> -->
 
-
     <g class="links">
-      <a xlink:href="/website.v2/features/dependency-free/" href="/website.v2/features/dependency-free/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="0" y="0" width="95" height="134" />
-      </a>
-      <a xlink:href="/website.v2/features/small-size/" href="/website.v2/features/small-size/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="95" y="0" width="95" height="134" />
-      </a>
-      <a xlink:href="/website.v2/features/core/" href="/website.v2/features/core/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="190" y="0" width="95" height="134" />
-      </a>
-      <a xlink:href="/website.v2/features/router/" href="/website.v2/features/router/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="285" y="0" width="95" height="134" />
-      </a>
-      <a xlink:href="/website.v2/features/prefetch/" href="/website.v2/features/prefetch/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="380" y="0" width="95" height="134" />
-      </a>
-      <a xlink:href="/website.v2/features/about/" href="/website.v2/features/about/">
-        <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="475" y="0" width="95" height="134" />
-      </a>
+      
+      
+      
+        <a xlink:href="/website.v2/features/user-friendly" href="/website.v2/features/user-friendly">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="0" y="0" width="95" height="134" />
+        </a>
+      
+        <a xlink:href="/website.v2/features/easy-peasy" href="/website.v2/features/easy-peasy">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="95" y="0" width="95" height="134" />
+        </a>
+      
+        <a xlink:href="/website.v2/features/smart" href="/website.v2/features/smart">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="190" y="0" width="95" height="134" />
+        </a>
+      
+        <a xlink:href="/website.v2/features/extensible" href="/website.v2/features/extensible">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="285" y="0" width="95" height="134" />
+        </a>
+      
+        <a xlink:href="/website.v2/features/futureproof" href="/website.v2/features/futureproof">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="380" y="0" width="95" height="134" />
+        </a>
+      
+        <a xlink:href="/website.v2/features/community" href="/website.v2/features/community">
+          <rect stroke="none" fill="rgba(0, 0, 0, 0)" x="475" y="0" width="95" height="134" />
+        </a>
+      
     </g>
-
-
   </svg>
 </div>
 
   </div>
 
-  <ul class="feature__nav">
+  
 
-  
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <!-- Left link -->
-      <li class="feature__nav__el">
-        <a href="/website.v2/features/router/">
-          <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
+
+
+
+<ul class="feature__nav">
+  <li class="feature__nav__el">
+    <a href="/website.v2/features/futureproof">
+      <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
   <!-- <use attr.xlink:href="assets/svg/sprite.svg#barba-arrow-prev"></use> -->
   <use xlink:href="#barba-arrow-prev"></use>
 </svg>
-          <span>B/Router</span>
-        </a>
-      </li>
-      <!-- Left link [end]-->
-      <!-- Right link -->
-      <li class="feature__nav__el">
-        <a href="/website.v2/features/about/">
-          <span>About</span>
-          <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
+      <span>Futureproof</span>
+    </a>
+  </li>
+  <li class="feature__nav__el">
+    <a href="/website.v2/features/user-friendly">
+      <span>User friendly</span>
+      <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
   <!-- <use attr.xlink:href="assets/svg/sprite.svg#barba-arrow-next"></use> -->
   <use xlink:href="#barba-arrow-next"></use>
 </svg>
-        </a>
-      </li>
-      <!-- Right link [end]-->
-    
-  
-    
-  
-  
-
-  
-
-  
-
-  
-
+    </a>
+  </li>
 </ul>
 
 
   <div class="feature-outer">
     <h1 class="feature__title colored">
-      B/Prefetch
+      Community
     </h1>
     
-
-    <div class="feature__bodymovin" data-ref="feature.bodymovin"></div>
-
-    <div class="feature__box">
-      <div class="feature__box__body">
-        <div class="feature__box__column--three">
-  <div class="feature__box__column__icon">
-    <img class="partial-image" src="assets/svg/prefetch.svg" alt="prefetch icon">
-
-  </div>
-  <p class="feature__box__body__text">Barba prefetch automatically fetch and cache your pages. Is inspired by
-    <a>quiklink</a></p>
+      <p>barba.js started as weekend side-project, and thanks the community it is now widely used by agencies and individuals.</p>
+<p>Used by Google, New York Times and many more.</p>
+<p>A big 🤗 to <a href="https://epic.net" target="_blank">EPIC Agency</a></p>
+<div class="credits-table">
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center" valign="top"><a href="http://luruke.com" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/61326?v=4" width="100px;" alt="Luigi De Rosa"/><br /><sup><b>Luigi De Rosa</b></sup></a><br /><sup><a href="#ideas-luruke" title="Ideas, Planning, & Feedback">🤔</a></sup> <sup><a href="https://github.com/barbajs/barba/commits?author=luruke" target="_blank" rel="noopener" title="Code">💻</a></sup> <sup><a href="https://github.com/barbajs/barba/commits?author=luruke" target="_blank" rel="noopener" title="Documentation">📖</a></sup> <sup><a href="#question-luruke" title="Answering Questions">💬</a></sup> <sup><a href="https://github.com/barbajs/barba/issues?q=author%3Aluruke" target="_blank" rel="noopener" title="Bug reports">🐛</a></sup> <sup><a href="https://github.com/barbajs/barba/commits?author=luruke" target="_blank" rel="noopener" title="Tests">⚠️</a></sup> <sup><a href="#review-luruke" title="Reviewed Pull Requests">👀</a></sup> <sup><a href="#infra-luruke" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></sup></td><td align="center"><a href="http://thierrymichel.net" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/806883?v=4" width="100px;" alt="Thierry Michel"/><br /><sup><b>Thierry Michel</b></sup></a><br /><sup><a href="#ideas-thierrymichel" title="Ideas, Planning, & Feedback">🤔</a></sup> <sup><a href="https://github.com/barbajs/barba/commits?author=thierrymichel" target="_blank" rel="noopener" title="Code">💻</a></sup> <sup><a href="https://github.com/barbajs/barba/commits?author=thierrymichel" target="_blank" rel="noopener" title="Documentation">📖</a></sup> <sup><a href="#question-thierrymichel" title="Answering Questions">💬</a></sup> <sup><a href="https://github.com/barbajs/barba/issues?q=author%3Athierrymichel" target="_blank" rel="noopener" title="Bug reports">🐛</a></sup> <sup><a href="https://github.com/barbajs/barba/commits?author=thierrymichel" target="_blank" rel="noopener" title="Tests">⚠️</a></sup> <sup><a href="#review-thierrymichel" title="Reviewed Pull Requests">👀</a></sup> <sup><a href="#infra-thierrymichel" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></sup></td><td align="center"><a href="https://www.xavierfoucrier.fr" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/2471223?v=4" width="100px;" alt="Xavier Foucrier"/><br /><sup><b>Xavier Foucrier</b></sup></a><br /><sup><a href="#ideas-xavierfoucrier" title="Ideas, Planning, & Feedback">🤔</a></sup> <sup><a href="https://github.com/barbajs/barba/commits?author=xavierfoucrier" target="_blank" rel="noopener" title="Documentation">📖</a></sup> <sup><a href="#question-xavierfoucrier" title="Answering Questions">💬</a></sup> <sup><a href="https://github.com/barbajs/barba/commits?author=xavierfoucrier" target="_blank" rel="noopener" title="Tests">⚠️</a></sup> <sup><a href="#review-xavierfoucrier" title="Reviewed Pull Requests">👀</a></sup></td><td align="center"><a href="http://www.thenerodesign.com" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/858150?v=4" width="100px;" alt="Marco Grimaldi"/><br /><sup><b>Marco Grimaldi</b></sup></a><br /><sup><a href="#design-markog85" title="Design">🎨</a></sup></td><td align="center"><a href="https://studio123.ca" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/22644154?v=4" width="100px;" alt="Cody Marcoux"/><br /><sup><b>Cody Marcoux</b></sup></a><br /><sup><a href="#question-c0mrx" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://philiphussak.com" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/3285136?v=4" width="100px;" alt="Phil."/><br /><sup><b>Phil.</b></sup></a><br /><sup><a href="#question-wiseoldman" title="Answering Questions">💬</a></sup></td><td align="center"><a href="http://www.fnool.com" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/5812801?v=4" width="100px;" alt="Giorgio Finulli"/><br /><sup><b>Giorgio Finulli</b></sup></a><br /><sup><a href="#question-gfnool" title="Answering Questions">💬</a></sup></td></tr><tr><td align="center" valign="top"><a href="https://www.thisisnota.studio" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/6507123?v=4" width="100px;" alt="Wouter"/><br /><sup><b>Wouter</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/issues?q=author%3AWouter125" target="_blank" rel="noopener" title="Bug reports">🐛</a></sup> <sup><a href="#question-Wouter125" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://selfaware.studio" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/12376535?v=4" width="100px;" alt="Mike Wagz"/><br /><sup><b>Mike Wagz</b></sup></a><br /><sup><a href="#ideas-mikehwagz" title="Ideas, Planning, & Feedback">🤔</a></sup> <sup><a href="#question-mikehwagz" title="Answering Questions">💬</a></sup> <sup><a href="https://github.com/barbajs/barba/commits?author=mikehwagz" target="_blank" rel="noopener" title="Tests">⚠️</a></sup></td><td align="center"><a href="https://www.youtube.com/c/redstapler_channel" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/16864380?v=4" width="100px;" alt="Red Stapler"/><br /><sup><b>Red Stapler</b></sup></a><br /><sup><a href="#tutorial-theredstapler" title="Tutorials">✅</a></sup> <sup><a href="#video-theredstapler" title="Videos">📹</a></sup></td><td align="center"><a href="http://www.19h47.fr" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/11242861?v=4" width="100px;" alt="Jérémy Levron"/><br /><sup><b>Jérémy Levron</b></sup></a><br /><sup><a href="#question-19h47" title="Answering Questions">💬</a></sup></td><td align="center"><a href="http://anhskohbo.github.io/" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/1529454?v=4" width="100px;" alt="Nguyen Van Anh"/><br /><sup><b>Nguyen Van Anh</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/commits?author=anhskohbo" target="_blank" rel="noopener" title="Code">💻</a></sup></td><td align="center"><a href="http://www.thedanielweber.com" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/668910?v=4" width="100px;" alt="Daniel Weber"/><br /><sup><b>Daniel Weber</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/commits?author=dlwebdev" target="_blank" rel="noopener" title="Code">💻</a></sup></td><td align="center"><a href="http://www.jmporchet.ch" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/3099008?v=4" width="100px;" alt="Jean-Marie Porchet"/><br /><sup><b>Jean-Marie Porchet</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/commits?author=jmporchet" target="_blank" rel="noopener" title="Code">💻</a></sup></td></tr><tr><td align="center" valign="top"><a href="https://www.jamesdocherty.com/" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/325490?v=4" width="100px;" alt="James"/><br /><sup><b>James</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/commits?author=docherty" target="_blank" rel="noopener" title="Code">💻</a></sup></td><td align="center"><a href="http://ruggeri.io" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/999162?v=4" width="100px;" alt="Nicholas"/><br /><sup><b>Nicholas</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/commits?author=nicholasruggeri" target="_blank" rel="noopener" title="Code">💻</a></sup></td><td align="center"><a href="http://patrick.wtf" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/667029?v=4" width="100px;" alt="Patrick Arminio"/><br /><sup><b>Patrick Arminio</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/commits?author=patrick91" target="_blank" rel="noopener" title="Code">💻</a></sup></td><td align="center"><a href="https://angelogulina.it" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/4223655?v=4" width="100px;" alt="A (from Sicily)"/><br /><sup><b>A (from Sicily)</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/commits?author=AngeloGulina" target="_blank" rel="noopener" title="Code">💻</a></sup></td><td align="center"><a href="https://github.com/pavel-mazhuga" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/29140681?v=4" width="100px;" alt="Pavel Mazhuga"/><br /><sup><b>Pavel Mazhuga</b></sup></a><br /><sup><a href="#question-pavel-mazhuga" title="Answering Questions">💬</a></sup></td><td align="center"><a href="http://dmdcode.it" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/7113516?v=4" width="100px;" alt="Daniele De Matteo"/><br /><sup><b>Daniele De Matteo</b></sup></a><br /><sup><a href="#question-DMDc0de" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://github.com/aswinkumar863" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/32381261?v=4" width="100px;" alt="aswinkumar863"/><br /><sup><b>aswinkumar863</b></sup></a><br /><sup><a href="#question-aswinkumar863" title="Answering Questions">💬</a></sup></td></tr><tr><td align="center" valign="top"><a href="https://github.com/ghost" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/10137?v=4" width="100px;" alt="Deleted user"/><br /><sup><b>Deleted user</b></sup></a><br /><sup><a href="#question-ghost" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://github.com/BounceIncHQ" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/39249876?v=4" width="100px;" alt="BounceIncHQ"/><br /><sup><b>BounceIncHQ</b></sup></a><br /><sup><a href="#question-BounceIncHQ" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://github.com/gordonwes" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/10758596?v=4" width="100px;" alt="gordonwes"/><br /><sup><b>gordonwes</b></sup></a><br /><sup><a href="#question-gordonwes" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://github.com/evfleet" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/7504632?v=4" width="100px;" alt="Evan Fleet"/><br /><sup><b>Evan Fleet</b></sup></a><br /><sup><a href="#question-evfleet" title="Answering Questions">💬</a></sup> <sup><a href="https://github.com/barbajs/barba/issues?q=author%3Aevfleet" target="_blank" rel="noopener" title="Bug reports">🐛</a></sup></td><td align="center"><a href="http://www.aligator-kom.de" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/32126746?v=4" width="100px;" alt="Jörg"/><br /><sup><b>Jörg</b></sup></a><br /><sup><a href="#example-jd4Aligator" title="Examples">💡</a></sup></td><td align="center"><a href="http://www.zaak.ch" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/12050808?v=4" width="100px;" alt="ZAAK"/><br /><sup><b>ZAAK</b></sup></a><br /><sup><a href="#example-StudioZAAK" title="Examples">💡</a></sup> <sup><a href="#question-StudioZAAK" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://leap-in.com" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/42055102?v=4" width="100px;" alt="Masahiro Tonomura"/><br /><sup><b>Masahiro Tonomura</b></sup></a><br /><sup><a href="#example-leapincorp" title="Examples">💡</a></sup></td></tr><tr><td align="center" valign="top"><a href="https://github.com/CassiusHR" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/24419585?v=4" width="100px;" alt="CassiusHR"/><br /><sup><b>CassiusHR</b></sup></a><br /><sup><a href="#question-CassiusHR" title="Answering Questions">💬</a></sup></td><td align="center"><a href="http://www.shanemurphy.me" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/3694619?v=4" width="100px;" alt="Shane Murphy"/><br /><sup><b>Shane Murphy</b></sup></a><br /><sup><a href="#question-shanewmurphy" title="Answering Questions">💬</a></sup></td><td align="center"><a href="http://www.dylanreeves.com" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/1294637?v=4" width="100px;" alt="Dylan Reeves"/><br /><sup><b>Dylan Reeves</b></sup></a><br /><sup><a href="#question-watzing" title="Answering Questions">💬</a></sup> <sup><a href="#example-watzing" title="Examples">💡</a></sup></td><td align="center"><a href="http://www.quentinneyraud.fr" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/9378568?v=4" width="100px;" alt="Quentin Neyraud"/><br /><sup><b>Quentin Neyraud</b></sup></a><br /><sup><a href="#question-quentinneyraud" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://github.com/tortilaman" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/5018268?v=4" width="100px;" alt="tortilaman"/><br /><sup><b>tortilaman</b></sup></a><br /><sup><a href="#question-tortilaman" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://github.com/psntr" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/20617539?v=4" width="100px;" alt="psntr"/><br /><sup><b>psntr</b></sup></a><br /><sup><a href="#question-psntr" title="Answering Questions">💬</a></sup></td><td align="center"><a href="http://thisbailiwick.com" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/12637253?v=4" width="100px;" alt="Kevin Clark"/><br /><sup><b>Kevin Clark</b></sup></a><br /><sup><a href="#question-thisbailiwick" title="Answering Questions">💬</a></sup></td></tr><tr><td align="center" valign="top"><a href="http://takodesign.one" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/26543624?v=4" width="100px;" alt="Tadeas Kosek"/><br /><sup><b>Tadeas Kosek</b></sup></a><br /><sup><a href="#question-Tedowski" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://github.com/gustavo-a" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/26806307?v=4" width="100px;" alt="Gustavo de Andrade"/><br /><sup><b>Gustavo de Andrade</b></sup></a><br /><sup><a href="#question-gustavo-a" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://durkangroup.com/" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/25391588?v=4" width="100px;" alt="Clinton"/><br /><sup><b>Clinton</b></sup></a><br /><sup><a href="#question-crobbinsdg" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://www.spon.io" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/3268717?v=4" width="100px;" alt="Dave Stockley"/><br /><sup><b>Dave Stockley</b></sup></a><br /><sup><a href="#question-magicspon" title="Answering Questions">💬</a></sup></td><td align="center"><a href="http://khaiknievel.carbonmade.com" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/5792500?v=4" width="100px;" alt="khaiknievel"/><br /><sup><b>khaiknievel</b></sup></a><br /><sup><a href="#question-khaiknievel" title="Answering Questions">💬</a></sup> <sup><a href="https://github.com/barbajs/barba/issues?q=author%3Akhaiknievel" target="_blank" rel="noopener" title="Bug reports">🐛</a></sup></td><td align="center"><a href="http://www.francescomichelini.com/" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/5191941?v=4" width="100px;" alt="Francesco Michelini"/><br /><sup><b>Francesco Michelini</b></sup></a><br /><sup><a href="#question-kekkorider" title="Answering Questions">💬</a></sup> <sup><a href="#example-kekkorider" title="Examples">💡</a></sup></td><td align="center"><a href="https://github.com/FistMeNaruto" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/13431677?v=4" width="100px;" alt="Domantas Petrauskas"/><br /><sup><b>Domantas Petrauskas</b></sup></a><br /><sup><a href="#question-FistMeNaruto" title="Answering Questions">💬</a></sup></td></tr><tr><td align="center" valign="top"><a href="http://kylebrumm.com" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/1709677?v=4" width="100px;" alt="Kyle Brumm"/><br /><sup><b>Kyle Brumm</b></sup></a><br /><sup><a href="#question-kjbrum" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://github.com/obelmont" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/6540497?v=4" width="100px;" alt="Oliver Belmont"/><br /><sup><b>Oliver Belmont</b></sup></a><br /><sup><a href="#question-obelmont" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://lunelson.xyz/" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/1242864?v=4" width="100px;" alt="Lu Nelson"/><br /><sup><b>Lu Nelson</b></sup></a><br /><sup><a href="#question-lunelson" title="Answering Questions">💬</a></sup></td><td align="center"><a href="http://bierdb.be" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/1107185?v=4" width="100px;" alt="Bram Cordie"/><br /><sup><b>Bram Cordie</b></sup></a><br /><sup><a href="#question-bramcordie" title="Answering Questions">💬</a></sup> <sup><a href="#ideas-bramcordie" title="Ideas, Planning, & Feedback">🤔</a></sup></td><td align="center"><a href="http://portfolio.schouman.info" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/510652?v=4" width="100px;" alt="Michael Schouman"/><br /><sup><b>Michael Schouman</b></sup></a><br /><sup><a href="#question-metalmini" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://www.jumplink.eu" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/1073989?v=4" width="100px;" alt="Pascal Garber"/><br /><sup><b>Pascal Garber</b></sup></a><br /><sup><a href="#question-JumpLink" title="Answering Questions">💬</a></sup> <sup><a href="#ideas-JumpLink" title="Ideas, Planning, & Feedback">🤔</a></sup></td><td align="center"><a href="https://twitter.com/bfred_it" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/1402241?v=4" width="100px;" alt="Federico Brigante"/><br /><sup><b>Federico Brigante</b></sup></a><br /><sup><a href="#question-bfred-it" title="Answering Questions">💬</a></sup></td></tr><tr><td align="center" valign="top"><a href="http://coreylee.tokyo/" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/1465865?v=4" width="100px;" alt="Corey Lee"/><br /><sup><b>Corey Lee</b></sup></a><br /><sup><a href="#question-factorzero" title="Answering Questions">💬</a></sup></td><td align="center"><a href="http://www.imls.uzh.ch/research/vonmering/people/milan-simonovic.html" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/888008?v=4" width="100px;" alt="Milan Simonovic"/><br /><sup><b>Milan Simonovic</b></sup></a><br /><sup><a href="#question-mbsimonovic" title="Answering Questions">💬</a></sup></td><td align="center"><a href="http://djul.es" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/196644?v=4" width="100px;" alt="Julien Vasseur"/><br /><sup><b>Julien Vasseur</b></sup></a><br /><sup><a href="#question-Djules" title="Answering Questions">💬</a></sup></td><td align="center"><a href="https://github.com/panwron" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/8494786?v=4" width="100px;" alt="Maciej Wrona"/><br /><sup><b>Maciej Wrona</b></sup></a><br /><sup><a href="#question-panwron" title="Answering Questions">💬</a></sup></td><td align="center"><a href="http://terion.name" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/1060205?v=4" width="100px;" alt="Terion"/><br /><sup><b>Terion</b></sup></a><br /><sup><a href="#ideas-terion-name" title="Ideas, Planning, & Feedback">🤔</a></sup></td><td align="center"><a href="https://github.com/cartogram" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/462077?v=4" width="100px;" alt="Matt Seccafien"/><br /><sup><b>Matt Seccafien</b></sup></a><br /><sup><a href="#ideas-cartogram" title="Ideas, Planning, & Feedback">🤔</a></sup></td><td align="center"><a href="http://www.maxschulmeister.com" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/15388185?v=4" width="100px;" alt="Max Schulmeister"/><br /><sup><b>Max Schulmeister</b></sup></a><br /><sup><a href="#ideas-max-schu" title="Ideas, Planning, & Feedback">🤔</a></sup></td></tr><tr><td align="center" valign="top"><a href="https://davidaase.com" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/1521451?v=4" width="100px;" alt="David"/><br /><sup><b>David</b></sup></a><br /><sup><a href="#ideas-tipsy" title="Ideas, Planning, & Feedback">🤔</a></sup></td><td align="center"><a href="https://github.com/pierrehenri220" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/19267400?v=4" width="100px;" alt="Pierre-Henri Lavigne"/><br /><sup><b>Pierre-Henri Lavigne</b></sup></a><br /><sup><a href="#ideas-pierrehenri220" title="Ideas, Planning, & Feedback">🤔</a></sup></td><td align="center"><a href="https://github.com/lsbyerley" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/3066258?v=4" width="100px;" alt="lsbyerley"/><br /><sup><b>lsbyerley</b></sup></a><br /><sup><a href="#ideas-lsbyerley" title="Ideas, Planning, & Feedback">🤔</a></sup></td><td align="center"><a href="http://gmorisseau.com/" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/242203?v=4" width="100px;" alt="Guillaume M."/><br /><sup><b>Guillaume M.</b></sup></a><br /><sup><a href="#ideas-theamnesic" title="Ideas, Planning, & Feedback">🤔</a></sup></td><td align="center"><a href="https://oscarotero.com" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/377873?v=4" width="100px;" alt="Oscar Otero"/><br /><sup><b>Oscar Otero</b></sup></a><br /><sup><a href="#ideas-oscarotero" title="Ideas, Planning, & Feedback">🤔</a></sup></td><td align="center"><a href="http://twitter.com/nicooprat" target="_blank" rel="noopener"><img src="https://avatars0.githubusercontent.com/u/645641?v=4" width="100px;" alt="Nico Prat"/><br /><sup><b>Nico Prat</b></sup></a><br /><sup><a href="#ideas-nicooprat" title="Ideas, Planning, & Feedback">🤔</a></sup></td><td align="center"><a href="http://marco.solazzi.me/" target="_blank" rel="noopener"><img src="https://avatars2.githubusercontent.com/u/104721?v=4" width="100px;" alt="Marco Solazzi"/><br /><sup><b>Marco Solazzi</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/issues?q=author%3Adwightjack" target="_blank" rel="noopener" title="Bug reports">🐛</a></sup></td></tr><tr><td align="center" valign="top"><a href="https://github.com/atoupet-toki" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/38693082?v=4" width="100px;" alt="atoupet-toki"/><br /><sup><b>atoupet-toki</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/issues?q=author%3Aatoupet-toki" target="_blank" rel="noopener" title="Bug reports">🐛</a></sup></td><td align="center"><a href="https://github.com/josias-r" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/11424820?v=4" width="100px;" alt="Josias"/><br /><sup><b>Josias</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/issues?q=author%3Ajosias-r" target="_blank" rel="noopener" title="Bug reports">🐛</a></sup></td><td align="center"><a href="https://github.com/OksanaRomaniv" target="_blank" rel="noopener"><img src="https://avatars1.githubusercontent.com/u/5724727?v=4" width="100px;" alt="Oksana Romaniv"/><br /><sup><b>Oksana Romaniv</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/issues?q=author%3AOksanaRomaniv" target="_blank" rel="noopener" title="Bug reports">🐛</a></sup></td><td align="center"><a href="https://www.olivier-guilleux.com" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/5804006?v=4" width="100px;" alt="Olivier Guilleux"/><br /><sup><b>Olivier Guilleux</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/issues?q=author%3Aoguilleux" target="_blank" rel="noopener" title="Bug reports">🐛</a></sup></td><td align="center"><a href="http://liroopierre.com" target="_blank" rel="noopener"><img src="https://avatars3.githubusercontent.com/u/11197281?v=4" width="100px;" alt="Liroo Pierre ᵈᵉᵛ"/><br /><sup><b>Liroo Pierre ᵈᵉᵛ</b></sup></a><br /><sup><a href="https://github.com/barbajs/barba/commits?author=Liroo" target="_blank" rel="noopener" title="Code">💻</a></sup></td></tr></table>
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 </div>
 
-<div class="feature__box__column--three">
-  <div class="feature__box__column__icon">
-    <img class="partial-image" src="assets/svg/links.svg" alt="links icon">
-
-  </div>
-  <p class="feature__box__body__text">Based on Intersection Observer, it processes <b>all eligible links</b> that enter
-    the viewport.</p>
-</div>
-
-      </div>
-      <div class="feature__box__footer">
-        <!--
-  Need: ctaLink, ctaModifier, ctaTitle, ctaIcon
--->
-<a href="/website.v2/docs/plugins/router/" class="feature__action--prefetch">
-  <p class="feature__action__title colored">User Guide</p>
-  
-  <svg viewBox="0 0 32 32" aria-hidden="true" class="icon--barba">
-  <!-- <use attr.xlink:href="assets/svg/sprite.svg#barba-arrow-next"></use> -->
-  <use xlink:href="#barba-arrow-next"></use>
-</svg>
-  
-</a>
-
-      </div>
-    </div>
     
   </div>
 </div>

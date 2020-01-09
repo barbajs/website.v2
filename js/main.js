@@ -13365,7 +13365,7 @@ var map = {
 	"./chrome/MenuTrigger.js": 126,
 	"./docs/DocsNav.js": 127,
 	"./docs/DocsNavLateral.js": 128,
-	"./feature/Feature.js": 129,
+	"./features/Feature.js": 129,
 	"./homepage/Homepage-old.js": 130,
 	"./homepage/Homepage.js": 131,
 	"./showcase/Form.js": 132,
@@ -30847,16 +30847,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_kapla___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_kapla__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lottie_web__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lottie_web___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lottie_web__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lottie_animation_feature0_json__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lottie_animation_feature0_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__lottie_animation_feature0_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lottie_animation_feature1_json__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lottie_animation_feature1_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__lottie_animation_feature1_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lottie_animation_feature2_json__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lottie_animation_feature2_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__lottie_animation_feature2_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lottie_animation_feature3_json__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lottie_animation_feature3_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__lottie_animation_feature3_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__lottie_animation_feature4_json__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__lottie_animation_feature4_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__lottie_animation_feature4_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lottie_animation_feature_0_json__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lottie_animation_feature_0_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__lottie_animation_feature_0_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lottie_animation_feature_1_json__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lottie_animation_feature_1_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__lottie_animation_feature_1_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lottie_animation_feature_2_json__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lottie_animation_feature_2_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__lottie_animation_feature_2_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lottie_animation_feature_3_json__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__lottie_animation_feature_3_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__lottie_animation_feature_3_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__lottie_animation_feature_4_json__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__lottie_animation_feature_4_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__lottie_animation_feature_4_json__);
 
  // Bodymovin JSON files
 
@@ -30866,24 +30866,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 const bodymovins = [{
-  data: __WEBPACK_IMPORTED_MODULE_2__lottie_animation_feature0_json___default.a,
+  data: __WEBPACK_IMPORTED_MODULE_2__lottie_animation_feature_0_json___default.a,
   step: 158
 }, {
-  data: __WEBPACK_IMPORTED_MODULE_3__lottie_animation_feature1_json___default.a,
+  data: __WEBPACK_IMPORTED_MODULE_3__lottie_animation_feature_1_json___default.a,
   step: 140
 }, {
-  data: __WEBPACK_IMPORTED_MODULE_4__lottie_animation_feature2_json___default.a,
+  data: __WEBPACK_IMPORTED_MODULE_4__lottie_animation_feature_2_json___default.a,
   step: 100
 }, {
-  data: __WEBPACK_IMPORTED_MODULE_5__lottie_animation_feature3_json___default.a,
+  data: __WEBPACK_IMPORTED_MODULE_5__lottie_animation_feature_3_json___default.a,
   step: 140
 }, {
-  data: __WEBPACK_IMPORTED_MODULE_6__lottie_animation_feature4_json___default.a,
+  data: __WEBPACK_IMPORTED_MODULE_6__lottie_animation_feature_4_json___default.a,
   step: 110
 }];
 /* harmony default export */ __webpack_exports__["default"] = (class extends __WEBPACK_IMPORTED_MODULE_0_kapla__["Component"] {
   load() {
-    console.log('test');
     const featureOrder = this.data.get('order');
     this.bodymovin = bodymovins[featureOrder];
 
@@ -30902,27 +30901,28 @@ const bodymovins = [{
   }
 
   animateOut() {
+    if (!this.animation) {
+      return Promise.resolve();
+    }
+
     return new Promise(resolve => {
       this.animation.playSegments([this.bodymovin.step, this.animation.animationData.op], true);
       setTimeout(() => {
         resolve();
-      }, 1500); // this.animation.onComplete = () => {
-      //   resolve();
-      // };
+      }, 1500);
     });
   }
 
   animateIn() {
-    return new Promise(resolve => {
-      console.log('animateInStart');
+    if (!this.animation) {
+      return Promise.resolve();
+    }
 
-      if (this.animation) {
-        this.animation.playSegments([0, this.bodymovin.step], true);
-        setTimeout(() => {
-          console.log('animateInEnd');
-          resolve();
-        }, 1000);
-      }
+    return new Promise(resolve => {
+      this.animation.playSegments([0, this.bodymovin.step], true);
+      setTimeout(() => {
+        resolve();
+      }, 1000);
     });
   }
 
