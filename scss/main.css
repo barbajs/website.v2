@@ -1535,10 +1535,9 @@ body {
 .docs__nav__lateral {
   position: static;
   display: flex;
-  width: 100%;
-  display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  width: 100%; }
   @media only screen and (min-width: 48em) {
     .docs__nav__lateral {
       width: 74vw;
@@ -1547,7 +1546,7 @@ body {
     .docs__nav__lateral {
       min-width: 50vw;
       max-width: 80rem;
-      padding: 0rem 6rem; } }
+      padding: 0 6rem; } }
   .docs__nav__lateral .icon--barba {
     width: 2.1rem;
     height: 1.5rem;
@@ -1555,6 +1554,7 @@ body {
     fill: inherit; }
 
 .docs__nav__lateral__link,
+[class*='docs__nav__lateral__link--'],
 .docs__nav__lateral__button {
   display: flex;
   align-items: center;
@@ -1569,19 +1569,23 @@ body {
   fill: #0c0c0c; }
   @media only screen and (min-width: 37.5em) {
     .docs__nav__lateral__link,
+    [class*='docs__nav__lateral__link--'],
     .docs__nav__lateral__button {
       font-size: 1.5rem; }
       .docs__nav__lateral__link:hover,
+      [class*='docs__nav__lateral__link--']:hover,
       .docs__nav__lateral__button:hover {
         color: white;
         background: #5a82f1;
         fill: white; } }
   @media only screen and (min-width: 64em) {
     .docs__nav__lateral__link,
+    [class*='docs__nav__lateral__link--'],
     .docs__nav__lateral__button {
       font-size: 2rem; } }
 
-.docs__nav__lateral__link {
+.docs__nav__lateral__link,
+[class*='docs__nav__lateral__link--'] {
   width: 35%; }
 
 .docs__nav__lateral__button {

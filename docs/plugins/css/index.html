@@ -39,7 +39,7 @@
     window.BARBA = {
       root: '/website.v2/',
       menu: JSON.parse('[{"title":"Features","url":"features/fast-flexible","slug":"/features","subpages":[{"title":"User friendly","url":"features/user-friendly"},{"title":"Easy peasy","url":"features/easy-peasy"},{"title":"Smart","url":"features/smart"},{"title":"Extensible","url":"features/extensible"},{"title":"Futureproof","url":"features/futureproof"},{"title":"Community","url":"features/community"}]},{"title":"Examples","url":"examples","slug":"/examples"},{"title":"Showcase","url":"showcase","slug":"/showcase"},{"title":"Docs","url":"docs/getstarted/intro","slug":"/docs"}]'),
-      docs: JSON.parse('[{"title":"Get Started","url":"docs/getstarted/intro","path":"/docs/getstarted","nextpage":{"label":"USER GUIDE","url":"docs/userguide/markup"}},{"title":"User Guide (Core)","url":"docs/userguide/markup","path":"/docs/userguide","subpages":[{"title":"Markup","url":"docs/userguide/markup","prevpage":{"label":"GET STARTED","url":"docs/getstarted/intro"},"nextpage":{"label":"Syntax","url":"docs/userguide/syntax"}},{"title":"Syntax","url":"docs/userguide/syntax","prevpage":{"label":"Markup","url":"docs/userguide/markup"},"nextpage":{"label":"PLUGINS","url":"docs/plugins/css"}}]},{"title":"Plugins","url":"/docs/plugins/css","path":"/docs/plugins","subpages":[{"title":"Css","url":"docs/plugins/css","prevpage":{"label":"USER GUIDE","url":"docs/userguide/markup"},"nextpage":{"label":"Router","url":"docs/plugins/router"}},{"title":"Router","url":"docs/plugins/router","prevpage":{"label":"Css","url":"docs/plugins/css"},"nextpage":{"label":"Prefetch","url":"docs/plugins/prefetch"}},{"title":"Prefetch","url":"docs/plugins/prefetch","prevpage":{"label":"Router","url":"docs/plugins/router"},"nextpage":{"label":"Preset","url":"docs/plugins/preset"}},{"title":"Preset","url":"docs/plugins/preset","prevpage":{"label":"Prefetch","url":"docs/plugins/prefetch"},"nextpage":{"label":"Head","url":"docs/plugins/head"}},{"title":"Head","url":"docs/plugins/head","prevpage":{"label":"Preset","url":"docs/plugins/preset"}}]}]'),
+      docs: JSON.parse('[{"title":"Get Started","url":"docs/getstarted/intro","path":"docs/getstarted","nextpage":{"label":"USER GUIDE","url":"docs/userguide/markup"}},{"title":"User Guide (Core)","url":"docs/userguide/markup","path":"docs/userguide","subpages":[{"title":"Markup","url":"docs/userguide/markup"},{"title":"Syntax","url":"docs/userguide/syntax"}]},{"title":"Plugins","url":"docs/plugins/css","path":"docs/plugins","subpages":[{"title":"Css","url":"docs/plugins/css"},{"title":"Router","url":"docs/plugins/router"},{"title":"Prefetch","url":"docs/plugins/prefetch"},{"title":"Preset","url":"docs/plugins/preset"},{"title":"Head","url":"docs/plugins/head"}]}]'),
     }
 
     document.documentElement.classList.add('js');
@@ -294,13 +294,15 @@
         
         <li class="">
           <a href="/website.v2/docs/userguide/markup">
-            <h2 class="docs__nav__subtitle ">Markup
+            <h2 class="docs__nav__subtitle ">
+              Markup
             </h2>
         </li>
         
         <li class="">
           <a href="/website.v2/docs/userguide/syntax">
-            <h2 class="docs__nav__subtitle ">Syntax
+            <h2 class="docs__nav__subtitle ">
+              Syntax
             </h2>
         </li>
         
@@ -313,7 +315,7 @@
     </li>
     
     <li>
-      <a href="/website.v2//docs/plugins/css">
+      <a href="/website.v2/docs/plugins/css">
         <h1 class="docs__nav__title is-open">Plugins</h1>
       </a>
 
@@ -325,31 +327,36 @@
         
         <li class="is-open">
           <a href="/website.v2/docs/plugins/css">
-            <h2 class="docs__nav__subtitle is-open">Css
+            <h2 class="docs__nav__subtitle is-open">
+              Css
             </h2>
         </li>
         
         <li class="">
           <a href="/website.v2/docs/plugins/router">
-            <h2 class="docs__nav__subtitle ">Router
+            <h2 class="docs__nav__subtitle ">
+              Router
             </h2>
         </li>
         
         <li class="">
           <a href="/website.v2/docs/plugins/prefetch">
-            <h2 class="docs__nav__subtitle ">Prefetch
+            <h2 class="docs__nav__subtitle ">
+              Prefetch
             </h2>
         </li>
         
         <li class="">
           <a href="/website.v2/docs/plugins/preset">
-            <h2 class="docs__nav__subtitle ">Preset
+            <h2 class="docs__nav__subtitle ">
+              Preset
             </h2>
         </li>
         
         <li class="">
           <a href="/website.v2/docs/plugins/head">
-            <h2 class="docs__nav__subtitle ">Head
+            <h2 class="docs__nav__subtitle ">
+              Head
             </h2>
         </li>
         
@@ -406,79 +413,35 @@
 
 
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <!-- Lateral Nav -->
+
+
+
 <div class="docs__nav__lateral" data-component="docs-nav-lateral">
-  <!-- Left Link -->
   
-  <a href="/website.v2/docs/userguide/markup" class="docs__nav__lateral__link">
-    <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
+    <a href="/website.v2/docs/userguide/syntax" class="docs__nav__lateral__link--prev">
+      <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
   <!-- <use attr.xlink:href="assets/svg/sprite.svg#barba-arrow-prev"></use> -->
   <use xlink:href="#barba-arrow-prev"></use>
 </svg>
-    <span class="docs__nav__lateral__label">USER GUIDE</span>
-  </a>
+      <span class="docs__nav__lateral__label">Syntax</span>
+    </a>
   
-  <!-- Left Link [end]-->
 
-  
-  <!-- Center Menu (for mobile)-->
   <button class="docs__nav__lateral__button">
     Doc
   </button>
-  <!-- Center Menu (for mobile) [end]-->
 
-  <!-- Rigth Link -->
-  <a href="/website.v2/docs/plugins/router" class="docs__nav__lateral__link">
-    <span class="docs__nav__lateral__label">Router</span>
-    <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
+  
+    <a href="/website.v2/docs/plugins/router" class="docs__nav__lateral__link--next">
+      <span class="docs__nav__lateral__label">Router</span>
+      <svg viewBox="0 0 21 15" aria-hidden="true" class="icon--barba">
   <!-- <use attr.xlink:href="assets/svg/sprite.svg#barba-arrow-next"></use> -->
   <use xlink:href="#barba-arrow-next"></use>
 </svg>
-  </a>
-  <!-- Rigth Link [end]-->
+    </a>
   
 </div>
-<!-- Lateral Nav [end]-->
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <!-- Lateral Nav -->
-<div class="docs__nav__lateral" data-component="docs-nav-lateral">
-  <!-- Left Link -->
-  
-  <!-- Left Link [end]-->
-
-  
-</div>
-<!-- Lateral Nav [end]-->
-
-  
-  
 
 </section>
 
