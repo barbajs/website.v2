@@ -54,7 +54,7 @@
 .menu__footer__download {
   font-weight: 700; }
 
-.menu__footer__download, .menu-extra__credits {
+.menu__footer__download, .menu-extra__credits, .transition__title {
   text-transform: uppercase; }
 
 .menu-trigger__github, .menu__pages__item__title,

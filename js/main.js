@@ -30855,7 +30855,7 @@ class DocsNavLateral extends __WEBPACK_IMPORTED_MODULE_0_kapla__["Component"] {
   }
 
   init() {
-    this.$refs.link.forEach(link => {
+    [].concat(this.$refs.link).forEach(link => {
       link.addEventListener('click', () => {
         this.close();
       });
