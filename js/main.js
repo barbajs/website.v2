@@ -12950,6 +12950,7 @@ function isForward(currentFeatureOrder, nextFeatureOrder) {
     const oldLogo = container.querySelectorAll('.logo.featured .base, .logo.featured .hover');
     const fullOldLogo = container.querySelectorAll('.logo.featured');
     const oldBigShape = container.querySelector('.logo.only-big');
+    current.container.querySelector('.menu-trigger').style.opacity = '0';
     return __WEBPACK_IMPORTED_MODULE_0_gsap__["a" /* gsap */].timeline().to(oldLogo, {
       duration: 0.3,
       opacity: 0
@@ -31286,11 +31287,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   mouseEnter(index) {
     this.$logo.classList.add('gray');
-    const {
-      featureSlug
-    } = this.$refs.listItem[index].dataset;
     const container = document.querySelector('[data-barba="container"]');
-    container.dataset.featureSlug = featureSlug;
+    container.dataset.featureOrder = index;
     __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$refs.listItem[index]);
     __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$items[index]);
     __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].to(this.$items[index], {
@@ -31315,7 +31313,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
 
     const container = document.querySelector('[data-barba="container"]');
-    container.dataset.featureSlug = '';
+    container.dataset.featureOrder = '';
     this.$logo.classList.remove('gray');
     __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$refs.listItem[index]);
     __WEBPACK_IMPORTED_MODULE_2_gsap__["a" /* gsap */].killTweensOf(this.$items[index]);

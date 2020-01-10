@@ -2333,17 +2333,17 @@ body {
     margin-top: 1rem;
     border-radius: 10rem; }
 
-.page,
-[data-barba-namespace*='page--'] {
+.page {
   width: 100%;
   max-width: 1440px;
   height: 100%;
   margin: 0 auto;
   padding: 16rem 4rem 6rem; }
   @media only screen and (min-width: 48em) {
-    .page,
-    [data-barba-namespace*='page--'] {
+    .page {
       padding: 16rem 11.19% 0; } }
+  .page .icon--barba {
+    stroke-width: 0; }
 
 [data-barba-namespace*='page--'][data-barba-namespace*='--black']::before {
   content: '';
@@ -2358,8 +2358,6 @@ body {
 .page-wrapper {
   width: 100%;
   height: 100%; }
-  .page-wrapper .icon--barba {
-    stroke-width: 0; }
 
 .page__header h1 {
   margin: 0;
