@@ -54,7 +54,7 @@
 .menu__footer__download {
   font-weight: 700; }
 
-.menu__footer__download, .menu-extra__credits, .transition__title {
+.menu__footer__download, .menu-extra__credits {
   text-transform: uppercase; }
 
 .menu-trigger__github, .menu__pages__item__title,
@@ -1970,7 +1970,7 @@ body {
   @media only screen and (min-width: 48em) {
     .feature {
       padding: 4rem; } }
-  .feature[data-feature-order='about'] {
+  .feature[data-feature-order='5'] {
     overflow: auto; }
 
 .big-shape-outer {
@@ -2783,6 +2783,7 @@ body {
   font-family: "Space Mono", monospace;
   font-size: 2.4rem !important;
   font-weight: 400;
+  text-transform: capitalize;
   letter-spacing: 0.5px !important;
   opacity: 0;
   will-change: opacity, transform; }
